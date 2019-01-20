@@ -1,0 +1,92 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile Shader",
+            "type": "shell",
+
+            "windows": {
+                "command": "scripts/compile.ps1"
+            },
+            "osx": {
+                "command": "scripts/compile.sh"
+            },
+            "linux": {
+                "command": "scripts/compile.sh"
+            },
+            "args": ["${relativeFile}"],
+
+            "problemMatcher": {
+                "owner": "custom",
+                "fileLocation": ["relative", "${workspaceFolder}"],
+                "pattern": {
+                    "regexp": "\\d{2}/\\d{2}/\\d{4} \\d{2}:\\d{2}:\\d{2} (\\w+): (.+) : (\\d+) : (.+)$",
+                    "severity": 1,
+                    "file": 2,
+                    "location": 3,
+                    "message": 4
+                }
+            },
+
+            "presentation": {
+                "echo": false,
+                "reveal": "silent",
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true
+            },
+            "group": "build"
+        },
+        {
+            "label": "Render Image",
+            "type": "shell",
+
+            "windows": {
+                "command": "scripts/render.ps1"
+            },
+            "osx": {
+                "command": "scripts/render.sh"
+            },
+            "linux": {
+                "command": "scripts/render.sh"
+            },
+            "args": [
+                "${input:fileToRender}"
+            ],
+
+            "problemMatcher": {
+                "owner": "custom",
+                "fileLocation": ["relative", "${workspaceFolder}"],
+                "pattern": {
+                    "regexp": "^\\d{2}/\\d{2}/\\d{4} \\d{2}:\\d{2}:\\d{2} (\\w+): .+ (\\..+):(\\d+) \\(col (\\d+)\\) .+: (.+)$",
+                    "severity": 1,
+                    "file": 2,
+                    "line": 3,
+                    "column": 4,
+                    "message": 5
+                }
+            },
+
+            "presentation": {
+                "echo": false,
+                "reveal": "silent",
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true
+            },
+
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": ["Compile Shader"]
+        }
+    ],
+    "inputs": [
+        {
+            "id": "fileToRender",
+            "description": "Which file should be rendered?",
+            "type": "promptString"
+        }
+    ]
+}
