@@ -8,7 +8,12 @@
                 "command": "python"
             },
             "osx": {
-                "command": "python3.7"
+                "command": "python3.7",
+                "options": {
+                    "env": {
+                        "AQSISHOME": "/Applications/Aqsis.app"
+                    }
+                }
             },
             "linux": {
                 "command": "python3.7"
@@ -17,6 +22,18 @@
                 "scripts/compile_rib.py",
                 "${relativeFile}"
             ],
+
+            "problemMatcher": {
+                "owner": "custom",
+                "fileLocation": ["relative", "${workspaceFolder}"],
+                "pattern": {
+                    "regexp": "^(.+):\\((.+)\\) (.+): (.+)$",
+                    "file": 1,
+                    "location": 2,
+                    "severity": 3,
+                    "message": 4,
+                }
+            },
 
             "presentation": {
                 "echo": false,
