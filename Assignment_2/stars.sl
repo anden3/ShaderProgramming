@@ -82,7 +82,7 @@ surface stars()
 
 	color cloudColor = mix(cloud1Color, cloud2Color, 0.5);
 	
-	// Ci = cloudColor;
-	Ci = C;
+	Ci = cloudColor;
+	// Ci = C;
 	Oi = Os;
 } 
