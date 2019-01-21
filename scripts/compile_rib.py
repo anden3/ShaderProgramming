@@ -211,7 +211,11 @@ def compile_rib(path: str):
 
 
 def convert_image():
-    image_path = [p for p in Path('.').glob('*.tif')][0]
+    try:
+        image_path = [p for p in Path('.').glob('*.tif')][0]
+    except IndexError:
+        print("Error! Cannot find .tif file in project root.\nPlease check the display attribute of the RIB file.", file=sys.stderr)
+    
     image_name, ext = os.path.splitext(image_path.name)
 
     image = Image.open(image_name + ext)
@@ -219,19 +223,29 @@ def convert_image():
 
     image_path.unlink()
 
+
+def find_rib_file(path: str):
+    try:
+        rib_path = [p for p in Path(path).parent.glob('*.rib')][0]
+    except IndexError:
+        print("Error! Cannot find a .rib file in the same directory as this shader.\n", file=sys.stderr)
+        sys.exit(1)
+    
+    return str(rib_path)
+
 def main():
     if len(sys.argv) == 1:
         sys.exit(1)
 
-    rib_path = sys.argv[1]
+    path = sys.argv[1]
 
-    if not rib_path.endswith('.rib'):
-        return
+    if path.endswith('.sl'):
+        path = find_rib_file(path)
 
-    for shader in scan_shaders(rib_path):
+    for shader in scan_shaders(path):
         compile_shader(shader)
 
-    compile_rib(rib_path)
+    compile_rib(path)
     convert_image()
 
 main()
