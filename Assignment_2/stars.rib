@@ -10,20 +10,20 @@ Attribute "displacementbound" "coordinatesystem" ["object"] "sphere" [150.0]
 
 WorldBegin
 
-		LightSource "ambientlight" 1 "intensity" 0.08
-		LightSource "distantlight" 1 "from" [2 4 -20] "to" [0 0 0] "intensity" 1.0
+	LightSource "ambientlight" 1 "intensity" 0.08
+	LightSource "distantlight" 1 "from" [2 4 -20] "to" [0 0 0] "intensity" 1.0
 
-		AttributeBegin
-	  	Color [ 1.0 1.0 1.0 ]
-  		Surface "stars"
-  		Polygon "P" [ -110 -110 0 110 -110 0 110 110 0 -110 110 0]
-		AttributeEnd
+	AttributeBegin
+	Color [ 1.0 1.0 1.0 ]
+  	Surface "stars" "float globalFrequency" 0.8
+  	Polygon "P" [ -110 -110 0 110 -110 0 110 110 0 -110 110 0]
+	AttributeEnd
 
 
-		# AttributeBegin
-	  	# Color [ 1.0 0.0 0.0 ]
-  		# Surface "galaxy"
-  		# Polygon "P" [ -70 -70 -1 70 -70 -1 70 70 -1 -70 70 -1]
-		# AttributeEnd
+	AttributeBegin
+	Color [ 1.0 0.0 0.0 ]
+  	Surface "galaxy"
+  	Polygon "P" [ -70 -70 -1 70 -70 -1 70 70 -1 -70 70 -1]
+	AttributeEnd
 
 WorldEnd
