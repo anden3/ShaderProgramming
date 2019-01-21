@@ -1,0 +1,30 @@
+Option "limits" "eyesplits" 16
+
+Display "mounty.tif" "file" "rgba"
+
+Format 480 360 -1
+PixelSamples 3 3
+Projection "perspective" "fov" 45
+Translate 0 -30 350
+Rotate -20 1 0 0
+
+Clipping 1 100000
+
+Attribute "displacementbound" "coordinatesystem" ["object"] "sphere" [150.0]
+
+WorldBegin
+	LightSource "ambientlight" 1 "intensity" 0.08
+	LightSource "distantlight" 1 "from" [-1 20 -20] "to" [0 0 0] "intensity" 1.0
+
+	AttributeBegin
+		Color [ 1.0 1.0 1.0 ]
+  		Surface "mountainsky"
+  		Polygon "P" [ -700 -100 480 700 -100 480 700 200 480 -700 200 480   ]
+	AttributeEnd
+
+	AttributeBegin
+		Color [ 1.0 1.0 1.0 ]
+  		Surface "mountain"
+  		Polygon "P" [ -700 0 480 700 0 480 700 0 -170 -700 0 -170   ]
+	AttributeEnd	
+WorldEnd
