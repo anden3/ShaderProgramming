@@ -225,6 +225,9 @@ def main():
 
     rib_path = sys.argv[1]
 
+    if not rib_path.endswith('.rib'):
+        return
+
     for shader in scan_shaders(rib_path):
         compile_shader(shader)
 
