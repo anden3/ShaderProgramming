@@ -10,7 +10,6 @@ Files for the laboration in Advanced Computer Graphics and Shader Programming
 * Download the repository and open it in Visual Studio Code.
 * Open up .vscode/tasks.json and edit the AQSISHOME variable for your operating system to point to the installation folder of Aqsis.
 * Make sure that your PATH includes the bin folder inside AQSISHOME.
-* Create empty folders called 'images' and 'shaders' inside the project root.
 
 # To compile a RIB file:
 * Open a RIB file in the editor.
