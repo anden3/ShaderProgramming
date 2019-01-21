@@ -5,7 +5,12 @@
             "label": "Compile RIB",
             "type": "shell",
             "windows": {
-                "command": "python"
+                "command": "python",
+                "options": {
+                    "env": {
+                        "AQSISHOME": "..."
+                    }
+                }
             },
             "osx": {
                 "command": "python3.7",
@@ -16,7 +21,12 @@
                 }
             },
             "linux": {
-                "command": "python3.7"
+                "command": "python3.7",
+                "options": {
+                    "env": {
+                        "AQSISHOME": "/Applications/Aqsis.app"
+                    }
+                }
             },
             "args": [
                 "scripts/compile_rib.py",
