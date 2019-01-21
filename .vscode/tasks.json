@@ -8,7 +8,8 @@
                 "command": "python",
                 "options": {
                     "env": {
-                        "AQSISHOME": "..."
+                        "AQSISHOME": "C:\\Program Files (x86)\\Aqsis",
+                        "AQSIS_SHADER_PATH": "shaders/:&"
                     }
                 }
             },
