@@ -1,28 +1,38 @@
-surface mountainsky(
-	color startcolor = (0.14, 0.34, 0.63);
-	color hazecolor  = (0.7,  1.0,  1.0 );
+#define snoise(p) (2 * (float noise(p)) - 1)
+
+float fBm(
+	point p;
+	uniform float octaves, lacunarity, gain
 ) {
-	color zerocol = color(0, 0, 0);
+	uniform float amp = 1;
+	varying point pp = p;
+	varying float sum = 0;
+
+	uniform float i;
+  
+	for (i = 0; i < octaves; i += 1) {
+		sum += amp * snoise (pp);
+		amp *= gain;
+		pp *= lacunarity;
+	}
+
+	return sum;
+}
+
+surface mountainsky(
 	
-	float basecol =     1 - clamp((ycomp(P) - 200) / 500, 0, 1);
-	float hazecol = pow(1 - clamp((ycomp(P) - 200) / 300, 0, 1), 3);
+) {
+	float vc = (v + 0.1) * 1.5;
+	float uu = ( u - 0.5) / (1.0 - vc);
+	float vv = (vc - 0.6) / (1.0 - vc);
+	point pp = point(uu, vv, 0);
 
-	color outcol  = mix(zerocol, startcolor, basecol);
-	      outcol += mix(zerocol, hazecolor,  hazecol);
-	
-	point P1 = point(0, 0, 0);
-	point P2 = ((u - 0.5) * 0.5, (v - 0.5) * 0.5, 0);
-	point P3 = point(0, v, 0);
+	float cloud = abs(fBm(pp + 98, 5, 2, 0.5));
+	cloud *= smoothstep(0.55, 0.56, v);
 
-	float dist1 = distance(P1, P2) * 1.8;
-	float dist2 = distance(P1, P3) * 1.8;
-	float dist = dist1 * dist2;
+	color c = mix((0.3, 0.3, 1.0), (1, 1, 1), cloud);
 
-	dist = smoothstep(0.015, 0.3, dist);
-	dist = clamp(dist, 0.01, 1.0);
-			
-	// Ci = outcol;
-	Ci = color(0.4, 0.2, 0.1) / dist;
+	Ci = c;
 	Oi = Os;
 } 
 
