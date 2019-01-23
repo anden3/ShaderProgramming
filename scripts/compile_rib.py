@@ -194,6 +194,7 @@ def compile_shader(path: str):
     for msg in result.stderr.decode('utf-8').splitlines():
         # TODO: Improve error handling here.
         print("Compile error!:", msg)
+        sys.exit(1)
 
 
 def compile_rib(path: str):
