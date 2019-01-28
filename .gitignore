@@ -1,4 +1,4 @@
-images/*.png
+images/*
 shaders/*.slx
 
 lab.code-workspace
