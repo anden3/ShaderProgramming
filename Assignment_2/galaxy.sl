@@ -16,7 +16,6 @@ float fBm(point p; uniform float octaves, lacunarity, gain) {
 
 surface galaxy(
 	float spiralFreq = 5.0;
-	float spiralModulo = 3.14;
 	float cloudFreq = 20;
 ) {
 	// Change perspective of galaxy.
