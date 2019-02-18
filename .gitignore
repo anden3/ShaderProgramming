@@ -1,4 +1,7 @@
 images/*
 shaders/*.slx
 
+*/Error.txt
+*/Thumbs.db
+
 lab.code-workspace
