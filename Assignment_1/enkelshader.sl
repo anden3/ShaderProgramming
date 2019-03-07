@@ -6,21 +6,21 @@ surface enkelshader(
 	uniform float noiseDepth = 1.0;
 	uniform float roughness  = 0.1;
 
+	uniform color COLOR_A   = (0.0, 0.0, 1.0);
+	uniform color COLOR_B   = (1.0, 1.0, 0.0);
+	uniform color COLOR_TOP = (1.0, 1.0, 1.0);
+
 	uniform color COLOR_DIFFUSE  = (0.6, 0.6, 0.6);
 	uniform color COLOR_SPECULAR = (1.0, 1.0, 1.0);
 ) {
-	color BLUE   = (0.0, 0.0, 1.0);
-	color YELLOW = (1.0, 1.0, 0.0);
-	color WHITE  = (1.0, 1.0, 1.0);
-
-	// Calculate blue/yellow mix.
+	// Calculate color mix for stripes.
 	float A = smoothstep(0.3, 0.7, mod(s * freq, 2));
 	float B = smoothstep(1.3, 1.7, mod(s * freq, 2));
-	color C = mix(BLUE, YELLOW, A - B);
+	color C = mix(COLOR_A, COLOR_B, A - B);
 
-	// Calculate white spot.
+	// Calculate top spot.
 	float Top = smoothstep(top, top + 0.3, t * freq);
-	C = mix(WHITE, C, Top);
+	C = mix(COLOR_TOP, C, Top);
 
 	// Calculate bump mapping.
 	float  bumpVal  = 1 - (A - B);
