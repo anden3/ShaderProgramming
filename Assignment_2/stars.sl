@@ -85,24 +85,34 @@ void voronoi_f1f2_2d(
 
 
 surface stars(
-	float globalFrequency = 1.0;
+	uniform float globalFrequency = 1.00;
+	uniform float starThreshold   = 0.02;
+
+	uniform float cloudMix        = 0.50;
+	uniform float starCloudMix    = 0.40;
+
+	uniform color COLOR_STARS   = color(0.20, 0.10, 0.03);
+	uniform color COLOR_CLOUD_A = color(0.30, 0.00, 0.80);
+	uniform color COLOR_CLOUD_B = color(0.45, 0.00, 0.30);
 ) {
+	// Stars
 	float f1;
-	voronoi_f1f2_2d(s * globalFrequency, t * globalFrequency, f1, 0, 0, 0, 0, 0);
-	f1 = smoothstep(0.02, 0.07, f1) + 0.01;
-
-	float starBrightness = clamp(fBm(P / 5 * globalFrequency, 6, 3.0, 0.7), 0, 1);
-	color stars = color(0.2, 0.1, 0.03) / f1 * starBrightness;
-
-	float cloud1 = clamp(fBm(P / 20.0 * globalFrequency, 6, 3.0, 0.5), 0, 1);
-	float cloud2 = clamp(1.0 - turbulence(P / 30.0 * globalFrequency, 6, 1.8, 0.7), 0, 1);
-
-	color cloudColor = mix(
-		color(0.3, 0.0, 0.8) * cloud1,
-		color(0.45, 0.0, 0.3) * cloud2,
-		0.5
+	voronoi_f1f2_2d(
+		s * globalFrequency, t * globalFrequency, f1,
+		0, 0, 0, 0, 0
 	);
+	f1 = smoothstep(starThreshold, starThreshold + 0.05, f1);
+
+	float starBrightness = clamp(
+		fBm(P / 5 * globalFrequency, 6.0, 3.0, 0.7), 0, 1
+	);
+	color stars = COLOR_STARS / (f1 + 0.01) * starBrightness;
+
+	// Clouds
+	color cloudA = COLOR_CLOUD_A * clamp(fBm(P / 20.0 * globalFrequency, 6, 3.0, 0.5), 0, 1);
+	color cloudB = COLOR_CLOUD_B * clamp(1.0 - turbulence(P / 30.0 * globalFrequency, 6, 1.8, 0.7), 0, 1);
+	color cloudColor = mix(cloudA, cloudB, cloudMix);
 	
-	Ci = mix(cloudColor, stars, 0.4);
+	Ci = mix(cloudColor, stars, starCloudMix);
 	Oi = Os;
 } 
