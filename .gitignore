@@ -5,3 +5,4 @@ shaders/*.slx
 */Thumbs.db
 
 lab.code-workspace
+.vscode/settings.json
