@@ -1,4 +1,10 @@
+#define TRANSITION_BEACH 1
+#define TRANSITION_OCEAN 3
+
+#define UP vector(0, 1, 0)
+
 #define snoise(p) (2 * (float noise(p)) - 1)
+#define ONE_MINUS(x) (1.0 - (x))
 
 float RidgedMultifractal(
 	point p;
@@ -117,55 +123,71 @@ float turbulence(
 }
 
 surface mountain(
-	uniform color COLOR_LAND   = (0.0, 0.8, 0.3);
-	uniform color COLOR_FOREST = (0.0, 0.3, 0.0);
-	uniform color COLOR_CLIFFS = (0.6, 0.6, 0.6);
-	uniform color COLOR_BEACH  = (1.0, 0.9, 0.8);
-	uniform color COLOR_OCEAN  = (0.0, 0.0, 1.0);
-	uniform color COLOR_WAVES  = (0.0, 0.0, 0.6);
+	uniform float seaLevel          = 20;
+	uniform float waveHeight        = 1.0;
+	uniform float fogIntensity      = 1.0;
+	uniform float waveFrequency     = 0.05;
+	uniform float forestFrequency   = 0.05;
+	uniform float terrainFrequency  = 0.003;
+	uniform float terrainHeightCoef = 120;
 
-	uniform color COLOR_DIFFUSE  = (0.5, 0.5, 0.5);
-	uniform color COLOR_SPECULAR = (0.5, 0.5, 0.5);
+	uniform point terrainOffset = point(100, 100, 100);
 
+	uniform color COLOR_FOG    = color(1.0, 1.0, 1.0);
+	uniform color COLOR_LAND   = color(0.0, 0.8, 0.3);
+	uniform color COLOR_FOREST = color(0.0, 0.3, 0.0);
+	uniform color COLOR_CLIFFS = color(0.6, 0.6, 0.6);
+	uniform color COLOR_BEACH  = color(1.0, 0.9, 0.8);
+	uniform color COLOR_OCEAN  = color(0.0, 0.0, 1.0);
+	uniform color COLOR_WAVES  = color(0.0, 0.0, 0.6);
+
+	uniform color COLOR_DIFFUSE  = color(0.5, 0.5, 0.5);
+	uniform color COLOR_SPECULAR = color(0.5, 0.5, 0.5);
 ) {
+	// Create terrain.
     float magnitude = RidgedMultifractal(
-		(P + 100) * 0.003, 7, 2.5, 0.9, 0.8, 5, 8
-	) * 120.00001;
+		(P + terrainOffset) * terrainFrequency, 7, 2.5, 0.9, 0.8, 5, 8
+	);
 	
-	float height = magnitude * distance(zcomp(P), 100) / 1000.0;
+	float height = magnitude * terrainHeightCoef * distance(zcomp(P), 100) / 1000.0;
 
     P += height * normalize(N);
     N = calculatenormal(P);
 
-	float forest = fBm(P / 20.0, 6, 2.8, 0.5);
+	// Get values for terrain types.
 	float cliffs = ycomp(normalize(N));
-	float ocean  = smoothstep(17, 20, height);
-	float beach  = smoothstep(20, 21, height);
-	float waves  = turbulence(P / 20.0, 6, 2, 0.5);
 
-	float roughness = mix(0.1, 0.01, ocean);
+	float ocean  = smoothstep(seaLevel - TRANSITION_OCEAN, seaLevel, height);
+	float beach  = smoothstep(seaLevel, seaLevel + TRANSITION_BEACH, height);
 
-	P += vector(0, 1, 0) * (1 - waves) * 1;
+	float forest =        fBm(P * forestFrequency, 6, 2.8, 0.5);
+	float waves  = turbulence(P *   waveFrequency, 6, 2.0, 0.5);
+
+	// Bump the waves upwards.
+	P += UP * ONE_MINUS(waves) * ONE_MINUS(ocean) * waveHeight;
 	N = calculatenormal(P);
 
+	// Calculate color.
+	color outColor   = COLOR_LAND;
+	color oceanColor = mix(COLOR_WAVES, COLOR_OCEAN, waves);
+
+	outColor  = mix(COLOR_FOREST, outColor, forest);
+	outColor  = mix(COLOR_CLIFFS, outColor, cliffs);
+	outColor  = mix(COLOR_BEACH,  outColor, beach );
+	outColor  = mix(oceanColor,   outColor, ocean );
+
+	// Calculate lighting.
 	normal Nf = faceforward(normalize(N), I);
-	color diff = COLOR_DIFFUSE * diffuse(Nf);
+	float roughness = mix(0.1, 0.01, ocean);
+	color diff = COLOR_DIFFUSE  * diffuse(Nf);
 	color spec = COLOR_SPECULAR * specular(Nf, normalize(-I), roughness);
 
-	color oceanColor = mix(COLOR_WAVES, COLOR_OCEAN, waves);
-	color outColor = COLOR_LAND;
+	outColor *= diff + spec;
 
-	outColor = mix(COLOR_FOREST, outColor, forest);
-	outColor = mix(COLOR_CLIFFS, outColor, cliffs);
-	outColor = mix(COLOR_BEACH,  outColor, beach );
-	outColor = mix(oceanColor,   outColor, ocean );
+	// Add fog.
+	float depth = abs(v - 1);
+	outColor = mix(outColor, COLOR_FOG, depth * fogIntensity);
 
-	point P1 = point(0, 0, 0);
-	point P2 = point(0, (v - 1) * 0.5, 0.0);
-
-	float dist = distance(P1, P2) * 1.8;
-	dist = clamp(smoothstep(0.35, 0.5, dist), 0.01, 1.0);
-    
-    Ci = mix(outColor * (diff + spec), (1, 1, 1), dist * 0.5);
+    Ci = outColor;
     Oi = Os;
 }
