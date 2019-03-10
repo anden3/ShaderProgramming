@@ -89,7 +89,7 @@ surface stars(
 	uniform float starThreshold   = 0.02;
 
 	uniform float cloudMix        = 0.50;
-	uniform float starCloudMix    = 0.40;
+	uniform float starCloudMix    = 0.60;
 
 	uniform color COLOR_STARS   = color(0.20, 0.10, 0.03);
 	uniform color COLOR_CLOUD_A = color(0.30, 0.00, 0.80);
@@ -113,6 +113,6 @@ surface stars(
 	color cloudB = COLOR_CLOUD_B * clamp(1.0 - turbulence(P / 30.0 * globalFrequency, 6, 1.8, 0.7), 0, 1);
 	color cloudColor = mix(cloudA, cloudB, cloudMix);
 	
-	Ci = mix(cloudColor, stars, starCloudMix);
+	Ci = mix(stars, cloudColor, starCloudMix);
 	Oi = Os;
 } 

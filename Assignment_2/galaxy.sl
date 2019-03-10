@@ -1,7 +1,7 @@
-#define ARM_BRIGHTNESS 10
-#define CENTER_BRIGHTNESS 1.5
+#define BRIGHTNESS_ARMS    10.0
+#define BRIGHTNESS_CENTER   3.0
 
-#define INVERT(x) (1.0 - (x))
+#define ONE_MINUS(x) (1.0 - (x))
 
 float fBm(point p; uniform float octaves, lacunarity, gain) {
 	uniform float amp = 1;
@@ -20,46 +20,47 @@ float fBm(point p; uniform float octaves, lacunarity, gain) {
 }
 
 surface galaxy(
-	uniform float colorMix    =  0.5;
-	uniform float armCurve    =  3.0;
-	uniform float starFreq    = 20.0;
-	uniform float spiralFreq  =  5.0;
-	uniform float spiralSpeed =  5.0;
+	uniform float colorMix    = 0.5;
+	uniform float armCurve    = 3.0;
+	uniform float starFreq    = 40.0;
+	uniform float spiralMod   = 1.57;
+	uniform float spiralFreq  = 2.0;
+	uniform float spiralSpeed = 5.0;
 
 	uniform color COLOR_GALAXY_A      = color(0.2, 0.2, 0.2);
 	uniform color COLOR_GALAXY_B      = color(1.0, 1.0, 0.0);
-	uniform color COLOR_GALAXY_CENTER = color(1.0, 1.0, 1.0);
 ) {
 	// Change perspective of galaxy.
-	float vc = (v - 0.1) * 1.5;
-	float uu = ((u - 0.5) * 1.0) / INVERT(vc);
-	float vv = (vc - 0.6) / INVERT(vc);
+	float vc = ( v - 0.1) * 1.5;
+	float uu = ( u - 0.5) / ONE_MINUS(vc);
+	float vv = (vc - 0.6) / ONE_MINUS(vc);
 
 	// Get distance to center.
-	float distc = length(point(uu, vv, 0));
+	float distc = length((uu, vv, 0));
 
 	// Fade galaxy center based on distance.
-	color galaxyCenter = COLOR_GALAXY_CENTER - smoothstep(0.1, 0.5, distc);
+	color galaxyCenter = ONE_MINUS(smoothstep(0.0, 0.5, distc));
 
-	// Make rays.
-	float rays = INVERT(smoothstep(0.2, 0.7, abs(sin(
-		(atan(vv, uu) + distc * armCurve) * spiralFreq
-	))));
+	// Generate galaxy arms.
+	float rays = smoothstep(0.9, 1.0, mod(
+		(atan(vv, uu) + distc * armCurve) * spiralFreq, spiralMod
+	));
 
-	// Make stars inside arms.
+	// Generate stars that will be inside the arms.
 	point ppp = point(distc, atan(vv, uu) + distc * spiralSpeed, 0);
 	float background = smoothstep(
-		0.0, 0.3, INVERT(abs(fBm(ppp * starFreq, 6.0, 1.8, 0.5)))
+		0.0, 0.3, ONE_MINUS(fBm(ppp * starFreq, 6.0, 1.8, 0.5))
 	);
 
 	// Combine arms and the stars inside them.
-	float combined = rays * background * ARM_BRIGHTNESS;
+	float combined = rays * background * BRIGHTNESS_ARMS;
 
 	// Fade arms with distance.
-	combined *= INVERT(smoothstep(0.1, 0.7, distc));
+	combined *= ONE_MINUS(smoothstep(0.1, 0.7, distc));
 
-	vector galaxy = (combined, combined, combined);
-	galaxy += galaxyCenter * CENTER_BRIGHTNESS;
+	// Add galaxy center and color.
+	color galaxy = (combined, combined, combined);
+	galaxy += galaxyCenter * BRIGHTNESS_CENTER;
 	galaxy *= mix(COLOR_GALAXY_A, COLOR_GALAXY_B, colorMix);
 
 	Ci = galaxy;
