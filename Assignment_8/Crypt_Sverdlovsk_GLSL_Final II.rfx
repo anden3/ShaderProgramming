@@ -1014,7 +1014,7 @@ LightingPass]]></RmTextDataBlock></RmStringVariable>
        <RmIntegerVariable NAME="Y" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="0" MIN="-10" MAX="10" CLAMP="FALSE"/>
        <RmIntegerVariable NAME="Width" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="828" MIN="-10" MAX="10" CLAMP="FALSE"/>
        <RmIntegerVariable NAME="Height" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="769" MIN="-10" MAX="10" CLAMP="FALSE"/>
-       <RmIntegerVariable NAME="ShowStatus" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="1" MIN="-10" MAX="10" CLAMP="FALSE"/>
+       <RmIntegerVariable NAME="ShowStatus" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="3" MIN="-10" MAX="10" CLAMP="FALSE"/>
        <RmIntegerVariable NAME="Visible" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="1" MIN="-10" MAX="10" CLAMP="FALSE"/>
        <RmIntegerVariable NAME="Minimized X" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="-1" MIN="-10" MAX="10" CLAMP="FALSE"/>
        <RmIntegerVariable NAME="Minimized Y" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="-1" MIN="-10" MAX="10" CLAMP="FALSE"/>
@@ -1128,7 +1128,7 @@ LightingPass]]></RmTextDataBlock></RmStringVariable>
     </RmRegistryBranch>
     <RmRegistryBranch NAME="WORKSPACE" API="" XML_VERSION="RenderMonkey 1.71">
      <RmStringVariable NAME="LAST_SAVE" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC=""><RmTextDataBlock TYPE="TEXT"><![CDATA[
-6/3/2019 17:47:52]]></RmTextDataBlock></RmStringVariable>
+13/3/2019 16:14:23]]></RmTextDataBlock></RmStringVariable>
      <RmStringVariable NAME="VERSION" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC=""><RmTextDataBlock TYPE="TEXT"><![CDATA[
 RenderMonkey Version 1.82 (build 322)]]></RmTextDataBlock></RmStringVariable>
      <RmStringVariable NAME="XML_VERSION" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC=""><RmTextDataBlock TYPE="TEXT"><![CDATA[
@@ -1160,6 +1160,8 @@ C:\Users\André Vennberg\Dropbox\Documents\Högskolan\Pågående kurser\IT312G A
    <RmGLPass NAME="RenderNormal" API="OpenGL" PASS_INDEX="0" ENABLED="TRUE">
     <RmModelReference NAME="Model" API=""/>
     <RmGLShader NAME="Vertex Program" API="OpenGL" PIXEL_SHADER="FALSE"><RmShaderCode TYPE="TEXT"><![CDATA[
+#version 120
+
 uniform vec4 vViewPosition;
 
 varying vec3 vNormal;
@@ -1172,18 +1174,19 @@ attribute vec3 rm_Binormal;
 attribute vec3 rm_Tangent;
 
 void main(void) {
-	vec4 vertex = gl_ModelViewProjectionMatrix * vec4(vec3(gl_Vertex.xyz + vViewPosition.xyz),1.0);
+	vec4 vertex = gl_ModelViewProjectionMatrix * vec4(gl_Vertex.xyz + vViewPosition.xyz, 1);
 	gl_Position = vertex;
 
-	vNormal =  gl_Normal;
-	vTangent = rm_Binormal;
+	vNormal   = gl_Normal;
+	vTangent  = rm_Binormal;
 	vBinormal = rm_Tangent;
    
-	vTexCoord = vec2(gl_MultiTexCoord0);
-	vTexCoord.y = -vTexCoord.y;
+	vTexCoord = vec2(gl_MultiTexCoord0.x, -gl_MultiTexCoord0.y);
 }
 ]]></RmShaderCode></RmGLShader>
     <RmGLShader NAME="Fragment Program" API="OpenGL" PIXEL_SHADER="TRUE"><RmShaderCode TYPE="TEXT"><![CDATA[
+#version 120
+
 varying vec2 vTexCoord;
 
 varying vec3 vNormal;
@@ -1197,13 +1200,11 @@ void main(void) {
 	vec3 N = normalize(vNormal);
 	vec3 T = normalize(vTangent);
 	
-	vec3 curNormal = ((texture2D(NormalMap, vTexCoord).xyz * 2.0) - 1.0);
+	vec3 curNormal = (texture2D(NormalMap, vTexCoord).xyz * 2) - 1.0;
 	
 	N = normalize((T * curNormal.x) + (B * curNormal.y) + (N * curNormal.z));
 	
-	gl_FragColor = vec4((N + 1.0) * 0.5, 1.0);
-
-	// gl_FragColor = vec4( (normalize(vNormal.xyz)+1.0)*0.5, 1.0 );
+	gl_FragColor = vec4((N + 1) * 0.5, 1);
 }]]></RmShaderCode></RmGLShader>
     <RmRenderTarget NAME="BaseNormalWorldspace" API="" INDEX="0" RENDER_TO_SCREEN="FALSE" COLOR_CLEAR="TRUE" DEPTH_CLEAR="TRUE" CLEAR_COLOR_VALUE="-16777216" DEPTH_CLEAR_VALUE="1.000000"/>
     <RmStreamMapReference NAME="Stream Mapping" API=""/>
@@ -1216,6 +1217,8 @@ void main(void) {
    <RmGLPass NAME="RenderDepth" API="OpenGL" PASS_INDEX="1" ENABLED="TRUE">
     <RmModelReference NAME="Model" API=""/>
     <RmGLShader NAME="Vertex Program" API="OpenGL" PIXEL_SHADER="FALSE"><RmShaderCode TYPE="TEXT"><![CDATA[
+#version 120
+
 uniform vec4 vViewPosition;
 uniform vec3 Light1Pos;
 
@@ -1224,7 +1227,7 @@ varying vec3 vEyeVec;
 varying vec3 threedee;
 
 void main(void) {
-   vec4 vertex = gl_ModelViewProjectionMatrix * vec4(vec3(gl_Vertex.xyz + vViewPosition.xyz), 1.0);
+   vec4 vertex = gl_ModelViewProjectionMatrix * vec4(gl_Vertex.xyz + vViewPosition.xyz, 1);
    gl_Position = vertex;
 
    threedee  = gl_Vertex.xyz;
@@ -1232,6 +1235,8 @@ void main(void) {
    vLightVec = Light1Pos - gl_Vertex.xyz;
 }]]></RmShaderCode></RmGLShader>
     <RmGLShader NAME="Fragment Program" API="OpenGL" PIXEL_SHADER="TRUE"><RmShaderCode TYPE="TEXT"><![CDATA[
+#version 120
+
 uniform float dFreq;
 uniform float depthMul;
 uniform float LightSize;
@@ -1267,13 +1272,17 @@ void main(void) {
    <RmGLPass NAME="LightMapBlurX" API="OpenGL" PASS_INDEX="5" ENABLED="TRUE">
     <RmModelReference NAME="ScreenAlignedQuad" API=""/>
     <RmGLShader NAME="Vertex Program" API="OpenGL" PIXEL_SHADER="FALSE"><RmShaderCode TYPE="TEXT"><![CDATA[
+#version 120
+
 varying vec2 texCoord;
 
 void main(void) {
-	gl_Position = sign(vec4(gl_Vertex.xy, 0.0, 1.0));
-	texCoord = (gl_Position.xy + vec2(1.0)) / vec2(2.0);     
+	gl_Position = sign(vec4(gl_Vertex.xy, 0, 1));
+	texCoord = (gl_Position.xy + vec2(1)) / vec2(2);     
 }]]></RmShaderCode></RmGLShader>
     <RmGLShader NAME="Fragment Program" API="OpenGL" PIXEL_SHADER="TRUE"><RmShaderCode TYPE="TEXT"><![CDATA[
+#version 120
+
 uniform sampler2D Texture;
 uniform float LmapBlurArea;
 uniform float glowMultiplier;
@@ -1283,7 +1292,7 @@ varying vec2 texCoord;
 #define KERNEL_SIZE 15
 vec2 kernel[KERNEL_SIZE];
 
-void main(void) {
+void createKernel() {
 	kernel[0]  = vec2(-7, 0.0017);
 	kernel[1]  = vec2(-6, 0.0058);
 	kernel[2]  = vec2(-5, 0.0163);
@@ -1299,16 +1308,29 @@ void main(void) {
 	kernel[12] = vec2( 5, 0.0163);
 	kernel[13] = vec2( 6, 0.0058);
 	kernel[14] = vec2( 7, 0.0017);
+}
 
-	vec4 original = vec4(texture2D(Texture, texCoord).xyz, 0.0);
-	
+vec3 glow(float area, float intensity) {
+	vec3 result = vec3(0);
+
 	for (int i = 0; i < KERNEL_SIZE; i++) {
-		original.xyz += texture2D(
-			Texture, texCoord + vec2(kernel[i].x * LmapBlurArea, 0.0)
-		).xyz * kernel[i].y * glowMultiplier;
+		vec3 color = texture2D(
+			Texture, texCoord + vec2(kernel[i].x * area, 0.0)
+		).xyz;
+		
+		result += color * kernel[i].y * intensity;
 	}
 	
-	gl_FragColor = original;
+	return result;
+}
+
+void main(void) {
+	createKernel();
+
+	vec3 color = texture2D(Texture, texCoord).xyz;
+	color += glow(LmapBlurArea, glowMultiplier);
+	
+	gl_FragColor = vec4(color, 1.0);
 }]]></RmShaderCode></RmGLShader>
     <RmRenderTarget NAME="LightMapBlurX" API="" INDEX="0" RENDER_TO_SCREEN="FALSE" COLOR_CLEAR="TRUE" DEPTH_CLEAR="TRUE" CLEAR_COLOR_VALUE="-16777216" DEPTH_CLEAR_VALUE="1.000000"/>
     <RmStreamMapReference NAME="Stream Mapping Screenspace" API=""/>
@@ -1326,15 +1348,17 @@ void main(void) {
    <RmGLPass NAME="LightMapBlurY" API="OpenGL" PASS_INDEX="6" ENABLED="TRUE">
     <RmModelReference NAME="ScreenAlignedQuad" API=""/>
     <RmGLShader NAME="Vertex Program" API="OpenGL" PIXEL_SHADER="FALSE"><RmShaderCode TYPE="TEXT"><![CDATA[
-varying vec2  texCoord;
+#version 120
 
-void main(void)
-{
-   gl_Position = vec4( gl_Vertex.xy, 0.0, 1.0 );
-   gl_Position = sign( gl_Position );
-   texCoord = (vec2( gl_Position.x, gl_Position.y ) + vec2( 1.0 ) ) / vec2( 2.0 );     
+varying vec2 texCoord;
+
+void main(void) {
+	gl_Position = sign(vec4(gl_Vertex.xy, 0, 1));
+	texCoord = (gl_Position.xy + vec2(1)) / vec2(2);     
 }]]></RmShaderCode></RmGLShader>
     <RmGLShader NAME="Fragment Program" API="OpenGL" PIXEL_SHADER="TRUE"><RmShaderCode TYPE="TEXT"><![CDATA[
+#version 120
+
 uniform sampler2D Texture;
 uniform float LmapBlurArea;
 uniform float glowMultiplier;
@@ -1344,7 +1368,7 @@ varying vec2 texCoord;
 #define KERNEL_SIZE 15
 vec2 kernel[KERNEL_SIZE];
 
-void main(void) {
+void createKernel() {
 	kernel[0]  = vec2(-7, 0.0017);
 	kernel[1]  = vec2(-6, 0.0058);
 	kernel[2]  = vec2(-5, 0.0163);
@@ -1360,16 +1384,29 @@ void main(void) {
 	kernel[12] = vec2( 5, 0.0163);
 	kernel[13] = vec2( 6, 0.0058);
 	kernel[14] = vec2( 7, 0.0017);
-	
-	vec4 original = vec4(texture2D(Texture, texCoord).xyz, 0.0);
-	
+}
+
+vec3 glow(float area, float intensity) {
+	vec3 result = vec3(0);
+
 	for (int i = 0; i < KERNEL_SIZE; i++) {
-		original.xyz += texture2D(
-			Texture, texCoord + vec2(0.0, kernel[i].x * LmapBlurArea)
-		).xyz * kernel[i].y * glowMultiplier;
+		vec3 color = texture2D(
+			Texture, texCoord + vec2(0, kernel[i].x) * area
+		).xyz;
+		
+		result += color * kernel[i].y * intensity;
 	}
 	
-	gl_FragColor = original;
+	return result;
+}
+
+void main(void) {
+	createKernel();
+
+	vec3 color = texture2D(Texture, texCoord).xyz;
+	color += glow(LmapBlurArea, glowMultiplier);
+	
+	gl_FragColor = vec4(color, 1.0);
 }]]></RmShaderCode></RmGLShader>
     <RmRenderTarget NAME="LightMapBlurY" API="" INDEX="0" RENDER_TO_SCREEN="FALSE" COLOR_CLEAR="TRUE" DEPTH_CLEAR="TRUE" CLEAR_COLOR_VALUE="-16777216" DEPTH_CLEAR_VALUE="1.000000"/>
     <RmStreamMapReference NAME="Stream Mapping Screenspace" API=""/>
@@ -1387,13 +1424,17 @@ void main(void) {
    <RmGLPass NAME="LightingPass" API="OpenGL" PASS_INDEX="7" ENABLED="TRUE">
     <RmModelReference NAME="ScreenAlignedQuad" API=""/>
     <RmGLShader NAME="Vertex Program" API="OpenGL" PIXEL_SHADER="FALSE"><RmShaderCode TYPE="TEXT"><![CDATA[
+#version 120
+
 varying vec2 texCoord;
 
 void main(void) {
-	gl_Position = sign(vec4(gl_Vertex.xy, 0.0, 1.0));
+	gl_Position = sign(vec4(gl_Vertex.xy, 0, 1));
 	texCoord = (gl_Position.xy + vec2(1)) / vec2(2);
 }]]></RmShaderCode></RmGLShader>
     <RmGLShader NAME="Fragment Program" API="OpenGL" PIXEL_SHADER="TRUE"><RmShaderCode TYPE="TEXT"><![CDATA[
+#version 120
+
 uniform sampler2D Diffuse;
 uniform sampler2D Lightmap;
 uniform sampler2D Normalmap;
@@ -1416,6 +1457,7 @@ const float CROSS_LENGTH = 0.03;
 
 const vec2 CENTER      = vec2(0.5, 0.5);
 const vec3 LUM_WEIGHTS = vec3(0.299, 0.587, 0.114);
+const vec3 ZERO_CONTRAST = vec3(0.5);
 
 /*
  * If value is between start and stop (inclusive) returns 1.0,
@@ -1425,7 +1467,56 @@ float inRange(float start, float stop, float value) {
 	return step(start, value) - step(stop, value);
 }
 
-vec4 getCross(void) {
+// Convert from [0 - 1] to [-1 - 1].
+vec3 unpack(vec3 value) {
+	return (value - 0.5) * 2;
+}
+
+float getLuminance(vec3 color) {
+	return dot(color, LUM_WEIGHTS);
+}
+
+vec2 lensBulge() {
+	vec2 tex = texCoord - CENTER;
+	float dist = length(tex);
+	
+	tex = CENTER + tex * pow(dist, bulgeIntensity);
+	
+	return tex;
+}
+
+vec3 lighting(vec2 texCoords) {
+	// Unpack vectors.
+	vec3 N = unpack(texture2D(Normalmap, texCoords).xyz);
+	vec3 L = unpack(texture2D(Lightvec,  texCoords).xyz);
+	
+	// Read textures.
+	vec3 lmapCol   = texture2D(Lightmap, texCoords).xyz;
+	vec4 diffCol   = texture2D(Diffuse,  texCoords);
+	vec4 depthPass = texture2D(Depth,    texCoords);
+	
+	float diffuse = dot(N, L);
+    
+    // First modify diffuse color, and then add lighting.
+	vec3 result = diffCol.xyz * diffuse * diffCol.w * depthPass.z;
+	result += lmapCol * depthPass.x;
+	
+	return result;
+}
+
+vec3 setContrast(vec3 color, float value) {
+	return mix(ZERO_CONTRAST, color, value);
+}
+
+vec3 setBrightness(vec3 color, float value) {
+	return color * value;
+}
+
+vec3 saturate(vec3 color, float value) {
+	return mix(vec3(getLuminance(color)), color, value);
+}
+
+vec3 crosshair() {
 	float halfWidth  = (CROSS_WIDTH  / 2.0) * crosshairSize;
 	float halfLength = (CROSS_LENGTH / 2.0) * crosshairSize;
 	
@@ -1439,46 +1530,22 @@ vec4 getCross(void) {
 	
 	float crosshair = clamp(horzBar + vertBar, 0.0, 1.0);
 	
-	return mix(vec4(0), crosshairColor, crosshair);
+	return mix(vec3(0), crosshairColor.xyz, crosshair);
 }
 
 void main(void) {
-	// Lens bulge
-	vec2 tex = texCoord - CENTER;
-	float dist = length(tex);
+	vec2 tex = lensBulge();
 	
-	tex = CENTER + tex * pow(dist, bulgeIntensity);
-
-	// Read textures.
-	vec4 lmapCol   = texture2D(Lightmap, tex);
-	vec4 diffCol   = texture2D(Diffuse,  tex);
-	vec4 depthPass = texture2D(Depth,    tex);
+	vec3 pixelColor;
 	
-	vec3 N = texture2D(Normalmap, tex).xyz;
-	vec3 L = texture2D(Lightvec,  tex).xyz;
+	pixelColor = lighting(tex);
+	pixelColor = setContrast  (pixelColor, contrast  );
+	pixelColor = setBrightness(pixelColor, brightness);
+	pixelColor = saturate     (pixelColor, saturation);
 	
-	// Convert from [0 - 1] to [-1 - 1].
-	N = (N - 0.5) * 2.0;
-	L = (L - 0.5) * 2.0;
-	
-	float diffuse = dot(N, L);
-    
-    // First modify diffuse color, and then add lighting.
-	vec4 outCol = vec4(0, 0, 0, 1);
-	outCol.xyz = diffCol.xyz * diffuse * diffCol.w * depthPass.z;
-	outCol.xyz += lmapCol.xyz * depthPass.x;
-	
-	// Change contrast and brightness.
-	outCol.xyz = mix(vec3(0.5), outCol.xyz, contrast) * brightness;
-	
-	// Change saturation.
-	float luminance = dot(outCol.xyz, LUM_WEIGHTS);
-	outCol.xyz = mix(vec3(luminance), outCol.xyz, saturation);
-	
-	// Add crosshair.
-	outCol += getCross();
+	pixelColor += crosshair();
  
-	gl_FragColor = outCol;
+	gl_FragColor = vec4(pixelColor, 1.0);
 }]]></RmShaderCode></RmGLShader>
     <RmRenderTarget NAME="DiffuseLit" API="" INDEX="0" RENDER_TO_SCREEN="FALSE" COLOR_CLEAR="TRUE" DEPTH_CLEAR="TRUE" CLEAR_COLOR_VALUE="-16777216" DEPTH_CLEAR_VALUE="1.000000"/>
     <RmStreamMapReference NAME="Stream Mapping Screenspace" API=""/>
@@ -1516,6 +1583,8 @@ void main(void) {
    <RmGLPass NAME="DOFBlurX" API="OpenGL" PASS_INDEX="8" ENABLED="TRUE">
     <RmModelReference NAME="ScreenAlignedQuad" API=""/>
     <RmGLShader NAME="Vertex Program" API="OpenGL" PIXEL_SHADER="FALSE"><RmShaderCode TYPE="TEXT"><![CDATA[
+#version 120
+
 varying vec2  texCoord;
 
 void main(void)
@@ -1525,6 +1594,8 @@ void main(void)
    texCoord = (vec2( gl_Position.x, gl_Position.y ) + vec2( 1.0 ) ) / vec2( 2.0 );     
 }]]></RmShaderCode></RmGLShader>
     <RmGLShader NAME="Fragment Program" API="OpenGL" PIXEL_SHADER="TRUE"><RmShaderCode TYPE="TEXT"><![CDATA[
+#version 120
+
 uniform sampler2D Texture;
 uniform sampler2D Depth;
 
@@ -1536,7 +1607,7 @@ varying vec2 texCoord;
 #define KERNEL_SIZE 15
 vec2 kernel[KERNEL_SIZE];
 
-void main(void) {
+void createKernel() {
 	kernel[0]  = vec2(-7, 0.0017);
 	kernel[1]  = vec2(-6, 0.0058);
 	kernel[2]  = vec2(-5, 0.0163);
@@ -1552,17 +1623,31 @@ void main(void) {
 	kernel[12] = vec2( 5, 0.0163);
 	kernel[13] = vec2( 6, 0.0058);
 	kernel[14] = vec2( 7, 0.0017);
-	
-	vec3 tmp = vec3(0);
-	float depth = texture2D(Depth, texCoord).y + dofStart;
+}
+
+float getDepth() {
+	return texture2D(Depth, texCoord).y;
+}
+
+vec3 depthOfFieldX(float start, float area) {
+	vec3 result = vec3(0);
+	float depth = getDepth() + start;
 	
 	for (int i = 0; i < KERNEL_SIZE; i++) {
-		tmp += texture2D(
-			Texture, texCoord + vec2(kernel[i].x * dofArea * depth, 0.0)
+		result += texture2D(
+			Texture, texCoord + vec2(kernel[i].x, 0) * area * depth
 		).xyz * kernel[i].y;
 	}
 	
-	gl_FragColor = vec4(tmp, 1.0);
+	return result;
+}
+
+void main(void) {
+	createKernel();
+	
+	vec3 color = depthOfFieldX(dofStart, dofArea);
+	
+	gl_FragColor = vec4(color, 1.0);
 }]]></RmShaderCode></RmGLShader>
     <RmRenderTarget NAME="DOFBlurX" API="" INDEX="0" RENDER_TO_SCREEN="FALSE" COLOR_CLEAR="TRUE" DEPTH_CLEAR="TRUE" CLEAR_COLOR_VALUE="-16777216" DEPTH_CLEAR_VALUE="1.000000"/>
     <RmStreamMapReference NAME="Stream Mapping Screenspace" API=""/>
@@ -1584,15 +1669,17 @@ void main(void) {
    <RmGLPass NAME="DOFBlurY" API="OpenGL" PASS_INDEX="9" ENABLED="TRUE">
     <RmModelReference NAME="ScreenAlignedQuad" API=""/>
     <RmGLShader NAME="Vertex Program" API="OpenGL" PIXEL_SHADER="FALSE"><RmShaderCode TYPE="TEXT"><![CDATA[
-varying vec2  texCoord;
+#version 120
 
-void main(void)
-{
-   gl_Position = vec4( gl_Vertex.xy, 0.0, 1.0 );
-   gl_Position = sign( gl_Position );
-   texCoord = (vec2( gl_Position.x, gl_Position.y ) + vec2( 1.0 ) ) / vec2( 2.0 );     
+varying vec2 texCoord;
+
+void main(void) {
+   gl_Position = sign(vec4(gl_Vertex.xy, 0, 1));
+   texCoord = (gl_Position.xy + vec2(1)) / vec2(2);     
 }]]></RmShaderCode></RmGLShader>
     <RmGLShader NAME="Fragment Program" API="OpenGL" PIXEL_SHADER="TRUE"><RmShaderCode TYPE="TEXT"><![CDATA[
+#version 120
+
 uniform sampler2D Texture;
 uniform sampler2D Depth;
 
@@ -1604,7 +1691,7 @@ varying vec2 texCoord;
 #define KERNEL_SIZE 15
 vec2 kernel[KERNEL_SIZE];
 
-void main(void) {
+void createKernel() {
 	kernel[0]  = vec2(-7, 0.0017);
 	kernel[1]  = vec2(-6, 0.0058);
 	kernel[2]  = vec2(-5, 0.0163);
@@ -1620,17 +1707,31 @@ void main(void) {
 	kernel[12] = vec2( 5, 0.0163);
 	kernel[13] = vec2( 6, 0.0058);
 	kernel[14] = vec2( 7, 0.0017);
-	
-	vec3 tmp = vec3(0);
-	float depth = texture2D(Depth, texCoord).y + dofStart;
+}
+
+float getDepth() {
+	return texture2D(Depth, texCoord).y;
+}
+
+vec3 depthOfFieldY(float start, float area) {
+	vec3 result = vec3(0);
+	float depth = getDepth() + start;
 	
 	for (int i = 0; i < KERNEL_SIZE; i++) {
-		tmp += texture2D(
-			Texture, texCoord + vec2(0.0, kernel[i].x * dofArea * depth)
+		result += texture2D(
+			Texture, texCoord + vec2(0, kernel[i].x) * area * depth
 		).xyz * kernel[i].y;
 	}
 	
-	gl_FragColor = vec4(tmp, 1.0);
+	return result;
+}
+
+void main(void) {
+	createKernel();
+	
+	vec3 color = depthOfFieldY(dofStart, dofArea);
+	
+	gl_FragColor = vec4(color, 1.0);
 }]]></RmShaderCode></RmGLShader>
     <RmStreamMapReference NAME="Stream Mapping Screenspace" API=""/>
     <RmTextureObject NAME="Texture" API="OpenGL" STATE_INDEX="0" VERTEX_TEXTURE="FALSE">
@@ -1654,26 +1755,30 @@ void main(void) {
    <RmGLPass NAME="RenderLightVec" API="OpenGL" PASS_INDEX="2" ENABLED="TRUE">
     <RmModelReference NAME="Model" API=""/>
     <RmGLShader NAME="Vertex Program" API="OpenGL" PIXEL_SHADER="FALSE"><RmShaderCode TYPE="TEXT"><![CDATA[
+#version 120
+
 uniform vec4 vViewPosition;
 uniform vec3 Light1Pos;
 
 varying vec3 vLightVec;
 
 void main(void) {
-	vec4 vertex = gl_ModelViewProjectionMatrix * vec4(vec3(gl_Vertex.xyz + vViewPosition.xyz), 1.0);
+	vec4 vertex = gl_ModelViewProjectionMatrix * vec4(gl_Vertex.xyz + vViewPosition.xyz, 1);
 	gl_Position = vertex;
    
 	vLightVec = Light1Pos - gl_Vertex.xyz;
 }]]></RmShaderCode></RmGLShader>
     <RmGLShader NAME="Fragment Program" API="OpenGL" PIXEL_SHADER="TRUE"><RmShaderCode TYPE="TEXT"><![CDATA[
+#version 120
+
 varying vec3 vLightVec;
 varying vec2 vTexCoord;
 
 uniform sampler2D DiffTex;
 
 void main(void) {
-	vec3 LightVec = (normalize(vLightVec) + 1.0) * 0.5;
-	gl_FragColor = vec4(LightVec, 1.0);
+	vec3 LightVec = (normalize(vLightVec) + 1) * 0.5;
+	gl_FragColor = vec4(LightVec, 1);
 }]]></RmShaderCode></RmGLShader>
     <RmRenderTarget NAME="BaseLightVec" API="" INDEX="0" RENDER_TO_SCREEN="FALSE" COLOR_CLEAR="TRUE" DEPTH_CLEAR="TRUE" CLEAR_COLOR_VALUE="-16777216" DEPTH_CLEAR_VALUE="1.000000"/>
     <RmStreamMapReference NAME="Stream Mapping" API=""/>
@@ -1686,34 +1791,30 @@ void main(void) {
    <RmGLPass NAME="RenderDiffuseTexture" API="OpenGL" PASS_INDEX="3" ENABLED="TRUE">
     <RmModelReference NAME="Model" API=""/>
     <RmGLShader NAME="Vertex Program" API="OpenGL" PIXEL_SHADER="FALSE"><RmShaderCode TYPE="TEXT"><![CDATA[
+#version 120
+
 uniform vec4 vViewPosition;
 
 varying vec3 vNormal;
 varying vec2 vTexCoord;
 
-void main(void)
-{
-   
-   vec4 vertex = gl_ModelViewProjectionMatrix * vec4(vec3(gl_Vertex.xyz+vViewPosition.xyz),1.0);
-   gl_Position = vertex;
-
-   vNormal =  gl_Normal.xyz;
-   vTexCoord = vec2(gl_MultiTexCoord0);
-   vTexCoord.y=-vTexCoord.y;
-
+void main(void) {
+	vec4 vertex = gl_ModelViewProjectionMatrix * vec4(gl_Vertex.xyz+vViewPosition.xyz, 1);
+	gl_Position = vertex;
+	
+	vNormal   =  gl_Normal.xyz;
+	vTexCoord = vec2(gl_MultiTexCoord0.x, -gl_MultiTexCoord0.y);
 }]]></RmShaderCode></RmGLShader>
     <RmGLShader NAME="Fragment Program" API="OpenGL" PIXEL_SHADER="TRUE"><RmShaderCode TYPE="TEXT"><![CDATA[
+#version 120
+
 varying vec3 vNormal;
 varying vec2 vTexCoord;
 
 uniform sampler2D DiffTex;
 
-void main(void)
-{
-
-   vec4 outCol=texture2D(DiffTex,vTexCoord);
-   gl_FragColor = outCol;
-
+void main(void) {
+	gl_FragColor = texture2D(DiffTex, vTexCoord);
 }]]></RmShaderCode></RmGLShader>
     <RmRenderTarget NAME="BaseDiffuseColor" API="" INDEX="0" RENDER_TO_SCREEN="FALSE" COLOR_CLEAR="TRUE" DEPTH_CLEAR="TRUE" CLEAR_COLOR_VALUE="-16777216" DEPTH_CLEAR_VALUE="1.000000"/>
     <RmStreamMapReference NAME="Stream Mapping" API=""/>
@@ -1726,28 +1827,30 @@ void main(void)
    <RmGLPass NAME="RenderLightMap" API="OpenGL" PASS_INDEX="4" ENABLED="TRUE">
     <RmModelReference NAME="Model" API=""/>
     <RmGLShader NAME="Vertex Program" API="OpenGL" PIXEL_SHADER="FALSE"><RmShaderCode TYPE="TEXT"><![CDATA[
+#version 120
+
 uniform vec4 vViewPosition;
 
 varying vec3 vNormal;
 varying vec2 vTexCoord;
 
 void main(void) {
-   vec4 vertex = gl_ModelViewProjectionMatrix * vec4(vec3(gl_Vertex.xyz + vViewPosition.xyz), 1);
+   vec4 vertex = gl_ModelViewProjectionMatrix * vec4(gl_Vertex.xyz + vViewPosition.xyz, 1);
    gl_Position = vertex;
 
-   vNormal     =  gl_Normal.xyz;
-   vTexCoord   =  vec2(gl_MultiTexCoord0);
-   vTexCoord.y = -vTexCoord.y;
+   vNormal   =  gl_Normal.xyz;
+   vTexCoord =  vec2(gl_MultiTexCoord0.x, -gl_MultiTexCoord0.y);
 }]]></RmShaderCode></RmGLShader>
     <RmGLShader NAME="Fragment Program" API="OpenGL" PIXEL_SHADER="TRUE"><RmShaderCode TYPE="TEXT"><![CDATA[
+#version 120
+
 varying vec3 vNormal;
 varying vec2 vTexCoord;
 
 uniform sampler2D DiffTex;
 
 void main(void) {
-	vec4 outCol = texture2D(DiffTex, vTexCoord);
-	gl_FragColor = outCol;
+	gl_FragColor = texture2D(DiffTex, vTexCoord);
 }]]></RmShaderCode></RmGLShader>
     <RmRenderTarget NAME="BaseLightMap" API="" INDEX="0" RENDER_TO_SCREEN="FALSE" COLOR_CLEAR="TRUE" DEPTH_CLEAR="TRUE" CLEAR_COLOR_VALUE="-16777216" DEPTH_CLEAR_VALUE="1.000000"/>
     <RmStreamMapReference NAME="Stream Mapping" API=""/>
@@ -1758,7 +1861,7 @@ void main(void) {
     <RmShaderConstant NAME="vViewPosition" API="" REGISTER="-1"/>
    </RmGLPass>
   </RmOpenGLEffect>
-  <RmVectorVariable NAME="vViewPosition" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="ViewPosition" VALUE_0="0.000000" VALUE_1="0.000000" VALUE_2="-199.999985" VALUE_3="1.000000" MIN="-10.000000" MAX="10.000000" CLAMP="FALSE" NORMALIZE="FALSE"/>
+  <RmVectorVariable NAME="vViewPosition" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="ViewPosition" VALUE_0="8.368458" VALUE_1="51.447365" VALUE_2="-193.088715" VALUE_3="1.000000" MIN="-10.000000" MAX="10.000000" CLAMP="FALSE" NORMALIZE="FALSE"/>
   <RmDynamicVariable NAME="Light1Pos" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VARIABLE_TYPE="FLOAT" ROWS="3" COLUMNS="1" FIXED_SIZE="TRUE" MIN="-1.000000" MAX="1.000000" CLAMP="FALSE" NORMALIZE="FALSE">
    <RmDynamicVariableValueContainer>
     <RmDynamicVariableValue ROW_INDEX="0" COLUMN_INDEX="0" VALUE="-0.020000"/>
@@ -1773,7 +1876,7 @@ void main(void) {
   <RmFloatVariable NAME="depthMul" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="0.100000" MIN="-1.000000" MAX="1.000000" CLAMP="FALSE"/>
   <RmFloatVariable NAME="glowMultiplier" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="0.800000" MIN="-1.000000" MAX="1.000000" CLAMP="FALSE"/>
   <RmFloatVariable NAME="dofStart" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="-0.280000" MIN="-0.600000" MAX="1.000000" CLAMP="TRUE"/>
-  <RmFloatVariable NAME="fTime0_X" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="Time0_X" VALUE="54.871315" MIN="-1.000000" MAX="1.000000" CLAMP="FALSE"/>
+  <RmFloatVariable NAME="fTime0_X" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="Time0_X" VALUE="86.991425" MIN="-1.000000" MAX="1.000000" CLAMP="FALSE"/>
   <RmFloatVariable NAME="bulgeIntensity" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="0.200000" MIN="-1.000000" MAX="1.000000" CLAMP="FALSE"/>
   <RmFloatVariable NAME="saturation" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="1.500000" MIN="-1.000000" MAX="1.000000" CLAMP="FALSE"/>
   <RmFloatVariable NAME="brightness" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="1.700000" MIN="0.000000" MAX="5.000000" CLAMP="TRUE"/>

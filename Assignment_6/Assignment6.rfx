@@ -909,7 +909,7 @@
   <RmRegistryBranch NAME="RM_REGISTRY" API="" XML_VERSION="RenderMonkey 1.71">
    <RmRegistryBranch NAME="RM_LOCAL" API="" XML_VERSION="RenderMonkey 1.71">
     <RmRegistryBranch NAME="RM_PLUGIN" API="" XML_VERSION="RenderMonkey 1.71"><RmTextDataBlock TYPE="TEXT"><![CDATA[
-<DockingPaneLayouts><Application_Layout><Pane-1><Type>0</Type><DockingCX>250</DockingCX><DockingCY>250</DockingCY><Title>Artist Editor</Title><ID>1001</ID><IconID>-1</IconID><Options>0</Options><DockingHolder>16</DockingHolder><FloatingHolder>0</FloatingHolder><LastHolder>16</LastHolder></Pane-1><Pane-2><Type>2</Type><DockingCX>0</DockingCX><DockingCY>0</DockingCY><Horiz>1</Horiz><Pane-1>3</Pane-1><Pane-2>4</Pane-2><Pane-3>5</Pane-3><Pane-4>6</Pane-4><Pane-5>7</Pane-5><Pane-6>8</Pane-6><Pane-7>9</Pane-7><Pane-8>10</Pane-8><Pane-9>11</Pane-9><Panes>9</Panes></Pane-2><Pane-3><Type>1</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-3><Pane-4><Type>1</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-4><Pane-5><Type>1</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-5><Pane-6><Type>1</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-6><Pane-7><Type>1</Type><DockingCX>435</DockingCX><DockingCY>111</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-7><Pane-8><Type>1</Type><DockingCX>562</DockingCX><DockingCY>273</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-8><Pane-9><Type>1</Type><DockingCX>427</DockingCX><DockingCY>106</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-9><Pane-10><Type>1</Type><DockingCX>331</DockingCX><DockingCY>174</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-10><Pane-11><Type>2</Type><DockingCX>0</DockingCX><DockingCY>0</DockingCY><Horiz>0</Horiz><Pane-1>12</Pane-1><Pane-2>17</Pane-2><Panes>2</Panes></Pane-11><Pane-12><Type>2</Type><DockingCX>0</DockingCX><DockingCY>763</DockingCY><Horiz>1</Horiz><Pane-1>13</Pane-1><Pane-2>15</Pane-2><Pane-3>16</Pane-3><Panes>3</Panes></Pane-12><Pane-13><Type>1</Type><DockingCX>250</DockingCX><DockingCY>250</DockingCY><Selected>14</Selected><Panes>1</Panes><Pane-1>14</Pane-1></Pane-13><Pane-14><Type>0</Type><DockingCX>250</DockingCX><DockingCY>250</DockingCY><Title>Workspace</Title><ID>1000</ID><IconID>-1</IconID><Options>0</Options><DockingHolder>13</DockingHolder><FloatingHolder>0</FloatingHolder><LastHolder>13</LastHolder></Pane-14><Pane-15><Type>4</Type><DockingCX>0</DockingCX><DockingCY>0</DockingCY></Pane-15><Pane-16><Type>1</Type><DockingCX>250</DockingCX><DockingCY>250</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-16><Pane-17><Type>1</Type><DockingCX>250</DockingCX><DockingCY>150</DockingCY><Selected>18</Selected><Panes>1</Panes><Pane-1>18</Pane-1></Pane-17><Pane-18><Type>0</Type><DockingCX>250</DockingCX><DockingCY>250</DockingCY><Title>Output</Title><ID>1002</ID><IconID>-1</IconID><Options>0</Options><DockingHolder>17</DockingHolder><FloatingHolder>0</FloatingHolder><LastHolder>17</LastHolder></Pane-18><Pane-19><Type>0</Type><DockingCX>331</DockingCX><DockingCY>174</DockingCY><Title>fLight1Pos</Title><ID>1100</ID><IconID>-1</IconID><Options>0</Options><DockingHolder>10</DockingHolder><FloatingHolder>22</FloatingHolder><LastHolder>22</LastHolder></Pane-19><Pane-20><Type>3</Type><DockingCX>0</DockingCX><DockingCY>0</DockingCY><TopContaner>21</TopContaner><WindowRectTopPos>26</WindowRectTopPos><WindowRectBottomPos>200</WindowRectBottomPos><WindowRectLeftPos>0</WindowRectLeftPos><WindowRectRightPos>331</WindowRectRightPos></Pane-20><Pane-21><Type>2</Type><DockingCX>331</DockingCX><DockingCY>174</DockingCY><Horiz>1</Horiz><Pane-1>22</Pane-1><Panes>1</Panes></Pane-21><Pane-22><Type>1</Type><DockingCX>331</DockingCX><DockingCY>174</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-22><Pane-23><Type>0</Type><DockingCX>427</DockingCX><DockingCY>106</DockingCY><Title>shadowBias</Title><ID>1101</ID><IconID>-1</IconID><Options>0</Options><DockingHolder>9</DockingHolder><FloatingHolder>26</FloatingHolder><LastHolder>26</LastHolder></Pane-23><Pane-24><Type>3</Type><DockingCX>0</DockingCX><DockingCY>0</DockingCY><TopContaner>25</TopContaner><WindowRectTopPos>26</WindowRectTopPos><WindowRectBottomPos>132</WindowRectBottomPos><WindowRectLeftPos>0</WindowRectLeftPos><WindowRectRightPos>427</WindowRectRightPos></Pane-24><Pane-25><Type>2</Type><DockingCX>427</DockingCX><DockingCY>106</DockingCY><Horiz>1</Horiz><Pane-1>26</Pane-1><Panes>1</Panes></Pane-25><Pane-26><Type>1</Type><DockingCX>427</DockingCX><DockingCY>106</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-26><Pane-27><Type>0</Type><DockingCX>562</DockingCX><DockingCY>273</DockingCY><Title>lightProjection</Title><ID>1102</ID><IconID>-1</IconID><Options>0</Options><DockingHolder>8</DockingHolder><FloatingHolder>30</FloatingHolder><LastHolder>30</LastHolder></Pane-27><Pane-28><Type>3</Type><DockingCX>0</DockingCX><DockingCY>0</DockingCY><TopContaner>29</TopContaner><WindowRectTopPos>27</WindowRectTopPos><WindowRectBottomPos>300</WindowRectBottomPos><WindowRectLeftPos>0</WindowRectLeftPos><WindowRectRightPos>562</WindowRectRightPos></Pane-28><Pane-29><Type>2</Type><DockingCX>562</DockingCX><DockingCY>273</DockingCY><Horiz>1</Horiz><Pane-1>30</Pane-1><Panes>1</Panes></Pane-29><Pane-30><Type>1</Type><DockingCX>562</DockingCX><DockingCY>273</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-30><Pane-31><Type>0</Type><DockingCX>435</DockingCX><DockingCY>111</DockingCY><Title>uSampleArea</Title><ID>1103</ID><IconID>-1</IconID><Options>0</Options><DockingHolder>7</DockingHolder><FloatingHolder>34</FloatingHolder><LastHolder>34</LastHolder></Pane-31><Pane-32><Type>3</Type><DockingCX>0</DockingCX><DockingCY>0</DockingCY><TopContaner>33</TopContaner><WindowRectTopPos>23</WindowRectTopPos><WindowRectBottomPos>134</WindowRectBottomPos><WindowRectLeftPos>0</WindowRectLeftPos><WindowRectRightPos>435</WindowRectRightPos></Pane-32><Pane-33><Type>2</Type><DockingCX>435</DockingCX><DockingCY>111</DockingCY><Horiz>1</Horiz><Pane-1>34</Pane-1><Panes>1</Panes></Pane-33><Pane-34><Type>1</Type><DockingCX>435</DockingCX><DockingCY>111</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-34><Pane-35><Type>0</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Title>uShadowBias</Title><ID>1104</ID><IconID>-1</IconID><Options>0</Options><DockingHolder>6</DockingHolder><FloatingHolder>38</FloatingHolder><LastHolder>38</LastHolder></Pane-35><Pane-36><Type>3</Type><DockingCX>0</DockingCX><DockingCY>0</DockingCY><TopContaner>37</TopContaner><WindowRectTopPos>30</WindowRectTopPos><WindowRectBottomPos>140</WindowRectBottomPos><WindowRectLeftPos>8</WindowRectLeftPos><WindowRectRightPos>443</WindowRectRightPos></Pane-36><Pane-37><Type>2</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Horiz>1</Horiz><Pane-1>38</Pane-1><Panes>1</Panes></Pane-37><Pane-38><Type>1</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-38><Pane-39><Type>0</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Title>uSampleArea</Title><ID>1105</ID><IconID>-1</IconID><Options>0</Options><DockingHolder>5</DockingHolder><FloatingHolder>42</FloatingHolder><LastHolder>42</LastHolder></Pane-39><Pane-40><Type>3</Type><DockingCX>0</DockingCX><DockingCY>0</DockingCY><TopContaner>41</TopContaner><WindowRectTopPos>30</WindowRectTopPos><WindowRectBottomPos>140</WindowRectBottomPos><WindowRectLeftPos>8</WindowRectLeftPos><WindowRectRightPos>443</WindowRectRightPos></Pane-40><Pane-41><Type>2</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Horiz>1</Horiz><Pane-1>42</Pane-1><Panes>1</Panes></Pane-41><Pane-42><Type>1</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-42><Pane-43><Type>0</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Title>uDiffIntensity</Title><ID>1106</ID><IconID>-1</IconID><Options>0</Options><DockingHolder>4</DockingHolder><FloatingHolder>46</FloatingHolder><LastHolder>46</LastHolder></Pane-43><Pane-44><Type>3</Type><DockingCX>0</DockingCX><DockingCY>0</DockingCY><TopContaner>45</TopContaner><WindowRectTopPos>30</WindowRectTopPos><WindowRectBottomPos>140</WindowRectBottomPos><WindowRectLeftPos>8</WindowRectLeftPos><WindowRectRightPos>443</WindowRectRightPos></Pane-44><Pane-45><Type>2</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Horiz>1</Horiz><Pane-1>46</Pane-1><Panes>1</Panes></Pane-45><Pane-46><Type>1</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-46><Pane-47><Type>0</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Title>uSpecIntensity</Title><ID>1107</ID><IconID>-1</IconID><Options>0</Options><DockingHolder>3</DockingHolder><FloatingHolder>50</FloatingHolder><LastHolder>50</LastHolder></Pane-47><Pane-48><Type>3</Type><DockingCX>0</DockingCX><DockingCY>0</DockingCY><TopContaner>49</TopContaner><WindowRectTopPos>30</WindowRectTopPos><WindowRectBottomPos>140</WindowRectBottomPos><WindowRectLeftPos>8</WindowRectLeftPos><WindowRectRightPos>443</WindowRectRightPos></Pane-48><Pane-49><Type>2</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Horiz>1</Horiz><Pane-1>50</Pane-1><Panes>1</Panes></Pane-49><Pane-50><Type>1</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-50><Summary><TopContainer>2</TopContainer><Client>15</Client><Panes>50</Panes></Summary></Application_Layout></DockingPaneLayouts>
+<DockingPaneLayouts><Application_Layout><Pane-1><Type>0</Type><DockingCX>250</DockingCX><DockingCY>250</DockingCY><Title>Artist Editor</Title><ID>1001</ID><IconID>-1</IconID><Options>0</Options><DockingHolder>18</DockingHolder><FloatingHolder>0</FloatingHolder><LastHolder>18</LastHolder></Pane-1><Pane-2><Type>2</Type><DockingCX>0</DockingCX><DockingCY>0</DockingCY><Horiz>1</Horiz><Pane-1>3</Pane-1><Pane-2>4</Pane-2><Pane-3>5</Pane-3><Pane-4>6</Pane-4><Pane-5>7</Pane-5><Pane-6>8</Pane-6><Pane-7>9</Pane-7><Pane-8>10</Pane-8><Pane-9>11</Pane-9><Pane-10>12</Pane-10><Pane-11>13</Pane-11><Panes>11</Panes></Pane-2><Pane-3><Type>1</Type><DockingCX>201</DockingCX><DockingCY>311</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-3><Pane-4><Type>1</Type><DockingCX>201</DockingCX><DockingCY>311</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-4><Pane-5><Type>1</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-5><Pane-6><Type>1</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-6><Pane-7><Type>1</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-7><Pane-8><Type>1</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-8><Pane-9><Type>1</Type><DockingCX>435</DockingCX><DockingCY>111</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-9><Pane-10><Type>1</Type><DockingCX>562</DockingCX><DockingCY>273</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-10><Pane-11><Type>1</Type><DockingCX>427</DockingCX><DockingCY>106</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-11><Pane-12><Type>1</Type><DockingCX>331</DockingCX><DockingCY>174</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-12><Pane-13><Type>2</Type><DockingCX>0</DockingCX><DockingCY>0</DockingCY><Horiz>0</Horiz><Pane-1>14</Pane-1><Pane-2>19</Pane-2><Panes>2</Panes></Pane-13><Pane-14><Type>2</Type><DockingCX>0</DockingCX><DockingCY>778</DockingCY><Horiz>1</Horiz><Pane-1>15</Pane-1><Pane-2>17</Pane-2><Pane-3>18</Pane-3><Panes>3</Panes></Pane-14><Pane-15><Type>1</Type><DockingCX>250</DockingCX><DockingCY>250</DockingCY><Selected>16</Selected><Panes>1</Panes><Pane-1>16</Pane-1></Pane-15><Pane-16><Type>0</Type><DockingCX>250</DockingCX><DockingCY>250</DockingCY><Title>Workspace</Title><ID>1000</ID><IconID>-1</IconID><Options>0</Options><DockingHolder>15</DockingHolder><FloatingHolder>0</FloatingHolder><LastHolder>15</LastHolder></Pane-16><Pane-17><Type>4</Type><DockingCX>0</DockingCX><DockingCY>0</DockingCY></Pane-17><Pane-18><Type>1</Type><DockingCX>250</DockingCX><DockingCY>250</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-18><Pane-19><Type>1</Type><DockingCX>250</DockingCX><DockingCY>150</DockingCY><Selected>20</Selected><Panes>1</Panes><Pane-1>20</Pane-1></Pane-19><Pane-20><Type>0</Type><DockingCX>250</DockingCX><DockingCY>250</DockingCY><Title>Output</Title><ID>1002</ID><IconID>-1</IconID><Options>0</Options><DockingHolder>19</DockingHolder><FloatingHolder>0</FloatingHolder><LastHolder>19</LastHolder></Pane-20><Pane-21><Type>0</Type><DockingCX>331</DockingCX><DockingCY>174</DockingCY><Title>fLight1Pos</Title><ID>1100</ID><IconID>-1</IconID><Options>0</Options><DockingHolder>12</DockingHolder><FloatingHolder>24</FloatingHolder><LastHolder>24</LastHolder></Pane-21><Pane-22><Type>3</Type><DockingCX>0</DockingCX><DockingCY>0</DockingCY><TopContaner>23</TopContaner><WindowRectTopPos>26</WindowRectTopPos><WindowRectBottomPos>200</WindowRectBottomPos><WindowRectLeftPos>0</WindowRectLeftPos><WindowRectRightPos>331</WindowRectRightPos></Pane-22><Pane-23><Type>2</Type><DockingCX>331</DockingCX><DockingCY>174</DockingCY><Horiz>1</Horiz><Pane-1>24</Pane-1><Panes>1</Panes></Pane-23><Pane-24><Type>1</Type><DockingCX>331</DockingCX><DockingCY>174</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-24><Pane-25><Type>0</Type><DockingCX>427</DockingCX><DockingCY>106</DockingCY><Title>shadowBias</Title><ID>1101</ID><IconID>-1</IconID><Options>0</Options><DockingHolder>11</DockingHolder><FloatingHolder>28</FloatingHolder><LastHolder>28</LastHolder></Pane-25><Pane-26><Type>3</Type><DockingCX>0</DockingCX><DockingCY>0</DockingCY><TopContaner>27</TopContaner><WindowRectTopPos>26</WindowRectTopPos><WindowRectBottomPos>132</WindowRectBottomPos><WindowRectLeftPos>0</WindowRectLeftPos><WindowRectRightPos>427</WindowRectRightPos></Pane-26><Pane-27><Type>2</Type><DockingCX>427</DockingCX><DockingCY>106</DockingCY><Horiz>1</Horiz><Pane-1>28</Pane-1><Panes>1</Panes></Pane-27><Pane-28><Type>1</Type><DockingCX>427</DockingCX><DockingCY>106</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-28><Pane-29><Type>0</Type><DockingCX>562</DockingCX><DockingCY>273</DockingCY><Title>lightProjection</Title><ID>1102</ID><IconID>-1</IconID><Options>0</Options><DockingHolder>10</DockingHolder><FloatingHolder>32</FloatingHolder><LastHolder>32</LastHolder></Pane-29><Pane-30><Type>3</Type><DockingCX>0</DockingCX><DockingCY>0</DockingCY><TopContaner>31</TopContaner><WindowRectTopPos>27</WindowRectTopPos><WindowRectBottomPos>300</WindowRectBottomPos><WindowRectLeftPos>0</WindowRectLeftPos><WindowRectRightPos>562</WindowRectRightPos></Pane-30><Pane-31><Type>2</Type><DockingCX>562</DockingCX><DockingCY>273</DockingCY><Horiz>1</Horiz><Pane-1>32</Pane-1><Panes>1</Panes></Pane-31><Pane-32><Type>1</Type><DockingCX>562</DockingCX><DockingCY>273</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-32><Pane-33><Type>0</Type><DockingCX>435</DockingCX><DockingCY>111</DockingCY><Title>uSampleArea</Title><ID>1103</ID><IconID>-1</IconID><Options>0</Options><DockingHolder>9</DockingHolder><FloatingHolder>36</FloatingHolder><LastHolder>36</LastHolder></Pane-33><Pane-34><Type>3</Type><DockingCX>0</DockingCX><DockingCY>0</DockingCY><TopContaner>35</TopContaner><WindowRectTopPos>23</WindowRectTopPos><WindowRectBottomPos>134</WindowRectBottomPos><WindowRectLeftPos>0</WindowRectLeftPos><WindowRectRightPos>435</WindowRectRightPos></Pane-34><Pane-35><Type>2</Type><DockingCX>435</DockingCX><DockingCY>111</DockingCY><Horiz>1</Horiz><Pane-1>36</Pane-1><Panes>1</Panes></Pane-35><Pane-36><Type>1</Type><DockingCX>435</DockingCX><DockingCY>111</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-36><Pane-37><Type>0</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Title>uShadowBias</Title><ID>1104</ID><IconID>-1</IconID><Options>0</Options><DockingHolder>8</DockingHolder><FloatingHolder>40</FloatingHolder><LastHolder>40</LastHolder></Pane-37><Pane-38><Type>3</Type><DockingCX>0</DockingCX><DockingCY>0</DockingCY><TopContaner>39</TopContaner><WindowRectTopPos>30</WindowRectTopPos><WindowRectBottomPos>140</WindowRectBottomPos><WindowRectLeftPos>8</WindowRectLeftPos><WindowRectRightPos>443</WindowRectRightPos></Pane-38><Pane-39><Type>2</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Horiz>1</Horiz><Pane-1>40</Pane-1><Panes>1</Panes></Pane-39><Pane-40><Type>1</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-40><Pane-41><Type>0</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Title>uSampleArea</Title><ID>1105</ID><IconID>-1</IconID><Options>0</Options><DockingHolder>7</DockingHolder><FloatingHolder>44</FloatingHolder><LastHolder>44</LastHolder></Pane-41><Pane-42><Type>3</Type><DockingCX>0</DockingCX><DockingCY>0</DockingCY><TopContaner>43</TopContaner><WindowRectTopPos>30</WindowRectTopPos><WindowRectBottomPos>140</WindowRectBottomPos><WindowRectLeftPos>8</WindowRectLeftPos><WindowRectRightPos>443</WindowRectRightPos></Pane-42><Pane-43><Type>2</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Horiz>1</Horiz><Pane-1>44</Pane-1><Panes>1</Panes></Pane-43><Pane-44><Type>1</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-44><Pane-45><Type>0</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Title>uDiffIntensity</Title><ID>1106</ID><IconID>-1</IconID><Options>0</Options><DockingHolder>6</DockingHolder><FloatingHolder>48</FloatingHolder><LastHolder>48</LastHolder></Pane-45><Pane-46><Type>3</Type><DockingCX>0</DockingCX><DockingCY>0</DockingCY><TopContaner>47</TopContaner><WindowRectTopPos>30</WindowRectTopPos><WindowRectBottomPos>140</WindowRectBottomPos><WindowRectLeftPos>8</WindowRectLeftPos><WindowRectRightPos>443</WindowRectRightPos></Pane-46><Pane-47><Type>2</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Horiz>1</Horiz><Pane-1>48</Pane-1><Panes>1</Panes></Pane-47><Pane-48><Type>1</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-48><Pane-49><Type>0</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Title>uSpecIntensity</Title><ID>1107</ID><IconID>-1</IconID><Options>0</Options><DockingHolder>5</DockingHolder><FloatingHolder>52</FloatingHolder><LastHolder>52</LastHolder></Pane-49><Pane-50><Type>3</Type><DockingCX>0</DockingCX><DockingCY>0</DockingCY><TopContaner>51</TopContaner><WindowRectTopPos>30</WindowRectTopPos><WindowRectBottomPos>140</WindowRectBottomPos><WindowRectLeftPos>8</WindowRectLeftPos><WindowRectRightPos>443</WindowRectRightPos></Pane-50><Pane-51><Type>2</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Horiz>1</Horiz><Pane-1>52</Pane-1><Panes>1</Panes></Pane-51><Pane-52><Type>1</Type><DockingCX>435</DockingCX><DockingCY>110</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-52><Pane-53><Type>0</Type><DockingCX>201</DockingCX><DockingCY>311</DockingCY><Title>elephantColor</Title><ID>1108</ID><IconID>-1</IconID><Options>0</Options><DockingHolder>4</DockingHolder><FloatingHolder>56</FloatingHolder><LastHolder>56</LastHolder></Pane-53><Pane-54><Type>3</Type><DockingCX>0</DockingCX><DockingCY>0</DockingCY><TopContaner>55</TopContaner><WindowRectTopPos>23</WindowRectTopPos><WindowRectBottomPos>334</WindowRectBottomPos><WindowRectLeftPos>0</WindowRectLeftPos><WindowRectRightPos>201</WindowRectRightPos></Pane-54><Pane-55><Type>2</Type><DockingCX>201</DockingCX><DockingCY>311</DockingCY><Horiz>1</Horiz><Pane-1>56</Pane-1><Panes>1</Panes></Pane-55><Pane-56><Type>1</Type><DockingCX>201</DockingCX><DockingCY>311</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-56><Pane-57><Type>0</Type><DockingCX>201</DockingCX><DockingCY>311</DockingCY><Title>elephantColor</Title><ID>1109</ID><IconID>-1</IconID><Options>0</Options><DockingHolder>3</DockingHolder><FloatingHolder>60</FloatingHolder><LastHolder>60</LastHolder></Pane-57><Pane-58><Type>3</Type><DockingCX>0</DockingCX><DockingCY>0</DockingCY><TopContaner>59</TopContaner><WindowRectTopPos>23</WindowRectTopPos><WindowRectBottomPos>334</WindowRectBottomPos><WindowRectLeftPos>0</WindowRectLeftPos><WindowRectRightPos>201</WindowRectRightPos></Pane-58><Pane-59><Type>2</Type><DockingCX>201</DockingCX><DockingCY>311</DockingCY><Horiz>1</Horiz><Pane-1>60</Pane-1><Panes>1</Panes></Pane-59><Pane-60><Type>1</Type><DockingCX>201</DockingCX><DockingCY>311</DockingCY><Selected>0</Selected><Panes>0</Panes></Pane-60><Summary><TopContainer>2</TopContainer><Client>17</Client><Panes>60</Panes></Summary></Application_Layout></DockingPaneLayouts>
 ]]></RmTextDataBlock>
      <RmRegistryBranch NAME="RmPreviewGLWindow" API="" XML_VERSION="RenderMonkey 1.71">
       <RmRegistryBranch NAME="EffectPlacementRepository" API="" XML_VERSION="RenderMonkey 1.71">
@@ -985,11 +985,11 @@
        <RmStringVariable NAME="Editing Shader" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC=""><RmTextDataBlock TYPE="TEXT"><![CDATA[
 Fragment Program]]></RmTextDataBlock></RmStringVariable>
        <RmStringVariable NAME="Editing Pass" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC=""><RmTextDataBlock TYPE="TEXT"><![CDATA[
-Platform]]></RmTextDataBlock></RmStringVariable>
+Elephant]]></RmTextDataBlock></RmStringVariable>
        <RmIntegerVariable NAME="Y" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="5" MIN="-10" MAX="10" CLAMP="FALSE"/>
        <RmIntegerVariable NAME="Width" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="942" MIN="-10" MAX="10" CLAMP="FALSE"/>
        <RmIntegerVariable NAME="Height" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="650" MIN="-10" MAX="10" CLAMP="FALSE"/>
-       <RmIntegerVariable NAME="ShowStatus" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="3" MIN="-10" MAX="10" CLAMP="FALSE"/>
+       <RmIntegerVariable NAME="ShowStatus" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="1" MIN="-10" MAX="10" CLAMP="FALSE"/>
        <RmIntegerVariable NAME="Visible" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="1" MIN="-10" MAX="10" CLAMP="FALSE"/>
        <RmIntegerVariable NAME="Minimized X" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="-1" MIN="-10" MAX="10" CLAMP="FALSE"/>
        <RmIntegerVariable NAME="Minimized Y" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="-1" MIN="-10" MAX="10" CLAMP="FALSE"/>
@@ -1034,10 +1034,10 @@ Platform]]></RmTextDataBlock></RmStringVariable>
      </RmRegistryBranch>
      <RmRegistryBranch NAME="RmScalarEditor" API="" XML_VERSION="RenderMonkey 1.71">
       <RmRegistryBranch NAME="NodeRepository" API="" XML_VERSION="RenderMonkey 1.71">
-       <RmRegistryBranch NAME="Effect Workspace.Position.Elephant.uShadowBias" API="" XML_VERSION="RenderMonkey 1.71">
+       <RmRegistryBranch NAME="Effect Workspace.Position.Elephant.shadowBias" API="" XML_VERSION="RenderMonkey 1.71">
         <RmIntegerVariable NAME="DockPaneID" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="1104" MIN="-10" MAX="10" CLAMP="FALSE"/>
        </RmRegistryBranch>
-       <RmRegistryBranch NAME="Effect Workspace.Position.Elephant.uSampleArea" API="" XML_VERSION="RenderMonkey 1.71">
+       <RmRegistryBranch NAME="Effect Workspace.Position.Elephant.shadowArea" API="" XML_VERSION="RenderMonkey 1.71">
         <RmIntegerVariable NAME="DockPaneID" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="1105" MIN="-10" MAX="10" CLAMP="FALSE"/>
        </RmRegistryBranch>
        <RmRegistryBranch NAME="Effect Workspace.Position.uDiffIntensity" API="" XML_VERSION="RenderMonkey 1.71">
@@ -1055,16 +1055,26 @@ Platform]]></RmTextDataBlock></RmStringVariable>
        </RmRegistryBranch>
       </RmRegistryBranch>
      </RmRegistryBranch>
+     <RmRegistryBranch NAME="RmColorEditor" API="" XML_VERSION="RenderMonkey 1.71">
+      <RmRegistryBranch NAME="NodeRepository" API="" XML_VERSION="RenderMonkey 1.71">
+       <RmRegistryBranch NAME="Effect Workspace.Position.elephantColor" API="" XML_VERSION="RenderMonkey 1.71">
+        <RmIntegerVariable NAME="DockPaneID" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="1109" MIN="-10" MAX="10" CLAMP="FALSE"/>
+        <RmBooleanVariable NAME="FloatingPoint" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="TRUE"/>
+        <RmIntegerVariable NAME="ColorType" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="0" MIN="-10" MAX="10" CLAMP="FALSE"/>
+        <RmBooleanVariable NAME="LargeSize" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="TRUE"/>
+       </RmRegistryBranch>
+      </RmRegistryBranch>
+     </RmRegistryBranch>
     </RmRegistryBranch>
     <RmRegistryBranch NAME="WORKSPACE" API="" XML_VERSION="RenderMonkey 1.71">
      <RmStringVariable NAME="LAST_SAVE" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC=""><RmTextDataBlock TYPE="TEXT"><![CDATA[
-18/2/2019 13:2:8]]></RmTextDataBlock></RmStringVariable>
+13/3/2019 15:30:16]]></RmTextDataBlock></RmStringVariable>
      <RmStringVariable NAME="VERSION" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC=""><RmTextDataBlock TYPE="TEXT"><![CDATA[
 RenderMonkey Version 1.82 (build 322)]]></RmTextDataBlock></RmStringVariable>
      <RmStringVariable NAME="XML_VERSION" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC=""><RmTextDataBlock TYPE="TEXT"><![CDATA[
 RenderMonkey 1.71]]></RmTextDataBlock></RmStringVariable>
      <RmStringVariable NAME="BASE_WORKSPACE_PATH" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC=""><RmTextDataBlock TYPE="TEXT"><![CDATA[
-\\hsnas6\StudentHome\2017\b17andve\Downloads\ShaderProgramming\Assignment_6\]]></RmTextDataBlock></RmStringVariable>
+C:\Users\André Vennberg\Dropbox\Documents\Högskolan\Pågående kurser\IT312G Avancerad datorgrafik och shaderprogrammering\Shaders\Assignment_6\]]></RmTextDataBlock></RmStringVariable>
     </RmRegistryBranch>
    </RmRegistryBranch>
   </RmRegistryBranch>
@@ -1080,6 +1090,8 @@ RenderMonkey 1.71]]></RmTextDataBlock></RmStringVariable>
    <RmFloatVariable NAME="uSpecIntensity" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="1.000000" MIN="0.000000" MAX="1.000000" CLAMP="TRUE"/>
    <RmColorVariable NAME="uSpecColor" API="" ARTIST_EDITABLE="TRUE" VARIABLE_SEMANTIC="" VALUE_0="1.000000" VALUE_1="1.000000" VALUE_2="1.000000" VALUE_3="1.000000"/>
    <RmColorVariable NAME="uDiffColor" API="" ARTIST_EDITABLE="TRUE" VARIABLE_SEMANTIC="" VALUE_0="1.000000" VALUE_1="1.000000" VALUE_2="1.000000" VALUE_3="1.000000"/>
+   <RmColorVariable NAME="elephantColor" API="" ARTIST_EDITABLE="TRUE" VARIABLE_SEMANTIC="" VALUE_0="0.500000" VALUE_1="0.000000" VALUE_2="0.900000" VALUE_3="1.000000"/>
+   <RmColorVariable NAME="platformColor" API="" ARTIST_EDITABLE="TRUE" VARIABLE_SEMANTIC="" VALUE_0="0.900000" VALUE_1="0.500000" VALUE_2="0.100000" VALUE_3="1.000000"/>
    <RmStreamMap NAME="Stream Mapping" API="">
     <RmStream NAME="Stream" API="" STRIDE="32">
      <RmStreamChannel NAME="Position_0" API="" DATA_SIZE="12" DATA_TYPE="2" REGISTER="0" USAGE="0" USAGE_INDEX="0" ATTRIBUTE_NAME="rm_Vertex"/>
@@ -1087,8 +1099,8 @@ RenderMonkey 1.71]]></RmTextDataBlock></RmStringVariable>
      <RmStreamChannel NAME="TexCoord_0" API="" DATA_SIZE="8" DATA_TYPE="1" REGISTER="0" USAGE="5" USAGE_INDEX="0" ATTRIBUTE_NAME="rm_TexCoord0"/>
     </RmStream>
    </RmStreamMap>
-   <RmModelData NAME="Disc2" API="" FILE_NAME=".\Disc.3ds" ORIENTATION="0"/>
    <RmModelData NAME="Model" API="" FILE_NAME=".\ElephantBody.3ds" ORIENTATION="0"/>
+   <RmModelData NAME="Disc2" API="" FILE_NAME=".\Disc.3ds" ORIENTATION="0"/>
    <RmGLPass NAME="Shadow Map" API="OpenGL" PASS_INDEX="0" ENABLED="TRUE">
     <RmModelReference NAME="Model" API=""/>
     <RmRenderStateBlock NAME="Render State" API="OpenGL">
@@ -1101,20 +1113,17 @@ RenderMonkey 1.71]]></RmTextDataBlock></RmStringVariable>
 varying vec3 vLightPos;
 
 vec4 pack(float depth) {
-   const vec4 bitSh  = vec4(pow(256,3), pow(256,2), 256, 1);
-   const vec4 bitMsk = vec4(0, 1.0/256, 1.0/256, 1.0/256);
-   
-   vec4 comp = fract(depth * bitSh);
-   comp -= comp.xxyz * bitMsk;
-   
-   return comp;
+	const vec4 bitSh  = vec4(pow(256,3), pow(256,2), 256, 1);
+	const vec4 bitMsk = vec4(0, 1.0/256, 1.0/256, 1.0/256);
+	
+	vec4 comp = fract(depth * bitSh);
+	comp -= comp.xxyz * bitMsk;
+	
+	return comp;
 }
          
 void main(void) {
-   float depth = length(vLightPos) / 10000.0;
-   vec4 packedDepth = pack(depth);
-   
-   gl_FragColor = packedDepth; 
+	gl_FragColor = pack(length(vLightPos) / 10000.0); 
 }]]></RmShaderCode></RmGLShader>
     <RmGLShader NAME="Vertex Program" API="OpenGL" PIXEL_SHADER="FALSE"><RmShaderCode TYPE="TEXT"><![CDATA[
 #version 120
@@ -1126,24 +1135,26 @@ uniform vec3 fLight1Pos;
 
 varying vec3 vLightPos;
 
+const vec3 UP = vec3(0, 0, 1);
+
 void main(void) {
-   // Direction Vector of Light
-   vec3 dirZ = normalize(fLight1Pos);
-   vec3 up   = vec3(0.0, 0.0, 1.0);
-   vec3 dirX = cross(up, dirZ);
-   vec3 dirY = cross(dirZ, dirX);
-   
-   // Transform object to Light Coordinate System
-   vec4 pos;
-   vec3 inpos = gl_Vertex.xyz - fLight1Pos;
-   pos.x = dot(dirX, inpos);
-   pos.y = dot(dirY, inpos);
-   pos.z = dot(dirZ, inpos);
-   pos.w = 1.0;
-   
-   vLightPos = inpos;
-   
-   gl_Position = pos * lightProjection;
+	// Direction Vector of Light
+	vec3 dirZ = normalize(fLight1Pos);
+	vec3 dirX = cross(UP, dirZ);
+	vec3 dirY = cross(dirZ, dirX);
+	
+	// Transform object to Light Coordinate System
+	vec3 inpos = gl_Vertex.xyz - fLight1Pos;
+	vLightPos = inpos;
+	
+	vec4 pos = vec4(
+		dot(dirX, inpos),
+		dot(dirY, inpos),
+		dot(dirZ, inpos),
+		1.0
+	);
+	
+	gl_Position = pos * lightProjection;
 }]]></RmShaderCode></RmGLShader>
     <RmRenderTarget NAME="renderTexture" API="" INDEX="0" RENDER_TO_SCREEN="FALSE" COLOR_CLEAR="TRUE" DEPTH_CLEAR="TRUE" CLEAR_COLOR_VALUE="-16777216" DEPTH_CLEAR_VALUE="1.000000"/>
     <RmStreamMapReference NAME="Stream Mapping" API=""/>
@@ -1165,9 +1176,9 @@ varying vec3 vLightVec;
 varying vec3 vNormal;
 varying vec3 vEyeVec;
 
+const vec3 UP = vec3(0, 0, 1);
+
 void main(void) {
-	const vec3 UP = vec3(0.0, 0.0, 1.0);
-	
 	// Direction Vector of Light
 	vec3 dirZ = normalize(-fLight1Pos);
 	vec3 dirX = cross(UP, dirZ);
@@ -1201,72 +1212,81 @@ void main(void) {
     <RmGLShader NAME="Fragment Program" API="OpenGL" PIXEL_SHADER="TRUE"><RmShaderCode TYPE="TEXT"><![CDATA[
 #version 120
 
-#define KERNEL_SIZE 25
-
 uniform sampler2D shadowMapTexture;
 
-uniform vec4 uDiffColor;
 uniform float uDiffIntensity;
-
-uniform vec4 uSpecColor;
 uniform float uSpecIntensity;
 
-uniform float uShadowBias;
-uniform float uSampleArea;
+uniform float shadowBias;
+uniform float shadowArea;
+
+uniform vec4 uDiffColor;
+uniform vec4 uSpecColor;
+uniform vec4 elephantColor;
 
 varying vec4 shadowCoord;
 varying vec3 vLightVec;
 varying vec3 vNormal;
 varying vec3 vEyeVec;
 
+#define KERNEL_SIZE 25
+vec2 Kernel[KERNEL_SIZE];
+
+void createKernel() {
+	Kernel[0]  = vec2(-2.0,-2.0 );
+	Kernel[1]  = vec2(-1.0,-2.0 );
+	Kernel[2]  = vec2( 0.0,-2.0 );
+	Kernel[3]  = vec2( 1.0,-2.0 );
+	Kernel[4]  = vec2( 2.0,-2.0 );
+	
+	Kernel[5]  = vec2(-2.0,-1.0 );
+	Kernel[6]  = vec2(-1.0,-1.0 );
+	Kernel[7]  = vec2( 0.0,-1.0 );
+	Kernel[8]  = vec2( 1.0,-1.0 );
+	Kernel[9]  = vec2( 2.0,-1.0 );
+	
+	Kernel[10] = vec2(-2.0, 0.0 );
+	Kernel[11] = vec2(-1.0, 0.0 );
+	Kernel[12] = vec2( 0.0, 0.0 );
+	Kernel[13] = vec2( 1.0, 0.0 );
+	Kernel[14] = vec2( 2.0, 0.0 );
+	
+	Kernel[15] = vec2(-2.0, 1.0 );
+	Kernel[16] = vec2(-1.0, 1.0 );
+	Kernel[17] = vec2( 0.0, 1.0 );
+	Kernel[18] = vec2( 1.0, 1.0 );
+	Kernel[19] = vec2( 2.0, 1.0 );
+	
+	Kernel[20] = vec2(-2.0, 2.0 );
+	Kernel[21] = vec2(-1.0, 2.0 );
+	Kernel[22] = vec2( 0.0, 2.0 );
+	Kernel[23] = vec2( 1.0, 2.0 );
+	Kernel[24] = vec2( 2.0, 2.0 );
+}
+
 float unpack(vec4 color) {
 	const vec4 bitShifts = vec4(pow(256, -3), pow(256, -2), pow(256,- 1), 1.0);
 	return dot(color, bitShifts);
 }
 
-float getShadow() {
-	float depth = length(vLightVec) / 10000.0;
-	
-	vec3 Kernel[KERNEL_SIZE];
-	
-	Kernel[0]  = vec3(-2.0,-2.0, 0.1 );
-	Kernel[1]  = vec3(-1.0,-2.0, 0.1 );
-	Kernel[2]  = vec3( 0.0,-2.0, 0.1 );
-	Kernel[3]  = vec3( 1.0,-2.0, 0.1 );
-	Kernel[4]  = vec3( 2.0,-2.0, 0.1 );
-	
-	Kernel[5]  = vec3(-2.0,-1.0, 0.1 );
-	Kernel[6]  = vec3(-1.0,-1.0, 0.1 );
-	Kernel[7]  = vec3( 0.0,-1.0, 0.1 );
-	Kernel[8]  = vec3( 1.0,-1.0, 0.1 );
-	Kernel[9]  = vec3( 2.0,-1.0, 0.1 );
-	
-	Kernel[10] = vec3(-2.0, 0.0, 0.1 );
-	Kernel[11] = vec3(-1.0, 0.0, 0.1 );
-	Kernel[12] = vec3( 0.0, 0.0, 0.1 );
-	Kernel[13] = vec3( 1.0, 0.0, 0.1 );
-	Kernel[14] = vec3( 2.0, 0.0, 0.1 );
-	
-	Kernel[15] = vec3(-2.0, 1.0, 0.1 );
-	Kernel[16] = vec3(-1.0, 1.0, 0.1 );
-	Kernel[17] = vec3( 0.0, 1.0, 0.1 );
-	Kernel[18] = vec3( 1.0, 1.0, 0.1 );
-	Kernel[19] = vec3( 2.0, 1.0, 0.1 );
-	
-	Kernel[20] = vec3(-2.0, 2.0, 0.1 );
-	Kernel[21] = vec3(-1.0, 2.0, 0.1 );
-	Kernel[22] = vec3( 0.0, 2.0, 0.1 );
-	Kernel[23] = vec3( 1.0, 2.0, 0.1 );
-	Kernel[24] = vec3( 2.0, 2.0, 0.1 );
+float getDepth() {
+	return length(vLightVec) / 10000.0;
+}
+
+float getShadow(float area, float bias) {
+	float depth = getDepth();
 	
 	float shadow = 0.0;
 	
 	for (int i = 0; i < KERNEL_SIZE; i++) {
-		float shadowMap = unpack(texture2DProj(shadowMapTexture, shadowCoord + vec4(Kernel[i] * uSampleArea, 0.0)));
-		shadow += float(depth < (shadowMap - uShadowBias));
+		float shadowMap = unpack(texture2DProj(
+			shadowMapTexture, shadowCoord + vec4(Kernel[i] * area, 0.1, 0.0)
+		));
+		
+		shadow += float(depth < (shadowMap - bias));
 	}
 	
-	return (shadow / float(KERNEL_SIZE));
+	return shadow / KERNEL_SIZE;
 }
 
 vec4 getLightColor() {
@@ -1280,7 +1300,7 @@ vec4 getLightColor() {
 	float specular = pow(clamp(dot(N, H), 0.0, 1.0), 120.0);
 	specular *= diffuse;
 	
-	vec4 returnColor = vec4(0,0,0,0);
+	vec4 returnColor = vec4(0);
 	returnColor += uDiffColor * (diffuse * uDiffIntensity);
 	returnColor += uSpecColor * (specular * uSpecIntensity);
 	
@@ -1288,24 +1308,24 @@ vec4 getLightColor() {
 }
 
 void main(void) {
-	const vec4 BASE_COLOR = vec4(0.4, 0.0, 0.9, 1.0);
+	createKernel();
 
-	float shadow = getShadow();
-	vec4 lighting = getLightColor();
+	float shadow = getShadow(shadowArea, shadowBias);
 	
-	gl_FragColor = (BASE_COLOR + lighting) * shadow;
+	gl_FragColor = (elephantColor + getLightColor()) * shadow;
 }]]></RmShaderCode></RmGLShader>
     <RmStreamMapReference NAME="Stream Mapping" API=""/>
-    <RmFloatVariable NAME="uShadowBias" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="-0.003000" MIN="-1.000000" MAX="1.000000" CLAMP="TRUE"/>
-    <RmFloatVariable NAME="uSampleArea" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="4.780000" MIN="-1.000000" MAX="1.000000" CLAMP="FALSE"/>
+    <RmFloatVariable NAME="shadowArea" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="4.780000" MIN="-1.000000" MAX="1.000000" CLAMP="FALSE"/>
+    <RmFloatVariable NAME="shadowBias" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="-0.003000" MIN="-1.000000" MAX="1.000000" CLAMP="TRUE"/>
     <RmTextureObject NAME="shadowMapTexture" API="OpenGL" STATE_INDEX="0" VERTEX_TEXTURE="FALSE">
      <RmTextureReference NAME="renderTexture" API=""/>
     </RmTextureObject>
     <RmSampler NAME="shadowMapTexture" API="" REGISTER="-1"/>
-    <RmShaderConstant NAME="matProjection" API="" REGISTER="-1"/>
     <RmShaderConstant NAME="fLight1Pos" API="" REGISTER="-1"/>
-    <RmShaderConstant NAME="uSampleArea" API="" REGISTER="-1"/>
-    <RmShaderConstant NAME="uShadowBias" API="" REGISTER="-1"/>
+    <RmShaderConstant NAME="matProjection" API="" REGISTER="-1"/>
+    <RmShaderConstant NAME="shadowArea" API="" REGISTER="-1"/>
+    <RmShaderConstant NAME="shadowBias" API="" REGISTER="-1"/>
+    <RmShaderConstant NAME="elephantColor" API="" REGISTER="-1"/>
     <RmShaderConstant NAME="uDiffColor" API="" REGISTER="-1"/>
     <RmShaderConstant NAME="uDiffIntensity" API="" REGISTER="-1"/>
     <RmShaderConstant NAME="uSpecColor" API="" REGISTER="-1"/>
@@ -1321,113 +1341,161 @@ uniform mat4 matView;
 uniform mat4 matViewProjection;
 uniform vec3 fLight1Pos;
 
+varying vec3 vNormal;
+varying vec3 vEyeVec;
 varying vec3 vLightVec;
 varying vec4 shadowCoord;
 
-void main(void) {
-   const vec3 UP = vec3(0.0, 0.0, 1.0);
+const vec3 UP = vec3(0, 0, 1);
 
-   // We move platform out of the way.
-   vec4 vertex = gl_Vertex;
-   vertex.xz *=  2.0;
-   vertex.y  -= 38.0;                                                                                           
-   
-   // Compute projected position from viewpoint of light
-   
-   // Direction Vector of Light
-   vec3 dirZ = normalize(-fLight1Pos);
-   vec3 dirX = cross(UP, dirZ);
-   vec3 dirY = cross(dirZ, dirX);
-   
-   // Transform object to Light Coordinate System
-   vec3 inpos = vertex.xyz - fLight1Pos;
-   vec4 pos = vec4(
-      dot(dirX, inpos),
-      dot(dirY, inpos),
-      dot(dirZ, inpos),
-      1.0
-   );
-   
-   vec4 shadowPos = lightProjection * pos;
-   shadowPos.z += 1.0;
-   
-   shadowCoord = vec4(
+void main(void) {
+	// We move platform out of the way.
+	vec4 vertex = gl_Vertex;
+	vertex.xz *=  2.0;
+	vertex.y  -= 38.0;                                                                                           
+	
+	// Compute projected position from viewpoint of light
+	
+	// Direction Vector of Light
+	vec3 dirZ = normalize(-fLight1Pos);
+	vec3 dirX = cross(UP, dirZ);
+	vec3 dirY = cross(dirZ, dirX);
+	
+	// Transform object to Light Coordinate System
+	vec3 inpos = vertex.xyz - fLight1Pos;
+	vec4 pos = vec4(
+  		dot(dirX, inpos),
+  		dot(dirY, inpos),
+  		dot(dirZ, inpos),
+  		1.0
+	);
+	
+	vec4 shadowPos = lightProjection * pos;
+	shadowPos.z += 1.0;
+	
+	shadowCoord = vec4(
 		0.5 * (shadowPos.z + shadowPos.x),
 		0.5 * (shadowPos.z - shadowPos.y),
 		0.0,
 		shadowPos.z
 	);
-   
-   vLightVec = vertex.xyz - fLight1Pos;
-   
-   vertex = gl_ModelViewProjectionMatrix * vertex; 
-   gl_Position = vertex;   
+	
+	vNormal = gl_NormalMatrix * gl_Normal;
+	vEyeVec = -vec3(gl_ModelViewMatrix * gl_Vertex);
+	vLightVec = vertex.xyz - fLight1Pos;
+	
+	vertex = gl_ModelViewProjectionMatrix * vertex; 
+	gl_Position = vertex;
 }]]></RmShaderCode></RmGLShader>
     <RmGLShader NAME="Fragment Program" API="OpenGL" PIXEL_SHADER="TRUE"><RmShaderCode TYPE="TEXT"><![CDATA[
 #version 120
 
-#define KERNEL_SIZE 25
-
 uniform sampler2D shadowMapTexture;        
 
-uniform float uShadowBias;
-uniform float uSampleArea;
+uniform float shadowBias;
+uniform float shadowArea;
+uniform vec4 platformColor;
 
-varying vec4 shadowCoord;
+uniform vec4 uDiffColor;
+uniform float uDiffIntensity;
+
+uniform vec4 uSpecColor;
+uniform float uSpecIntensity;
+
+varying vec3 vNormal;
+varying vec3 vEyeVec;
 varying vec3 vLightVec;
+varying vec4 shadowCoord;
+
+const vec3 UP = vec3(0, 1, 0);
+
+#define KERNEL_SIZE 25
+vec2 Kernel[KERNEL_SIZE];
+
+void createKernel() {
+	Kernel[0]  = vec2(-2.0,-2.0 );
+	Kernel[1]  = vec2(-1.0,-2.0 );
+	Kernel[2]  = vec2( 0.0,-2.0 );
+	Kernel[3]  = vec2( 1.0,-2.0 );
+	Kernel[4]  = vec2( 2.0,-2.0 );
+	
+	Kernel[5]  = vec2(-2.0,-1.0 );
+	Kernel[6]  = vec2(-1.0,-1.0 );
+	Kernel[7]  = vec2( 0.0,-1.0 );
+	Kernel[8]  = vec2( 1.0,-1.0 );
+	Kernel[9]  = vec2( 2.0,-1.0 );
+	
+	Kernel[10] = vec2(-2.0, 0.0 );
+	Kernel[11] = vec2(-1.0, 0.0 );
+	Kernel[12] = vec2( 0.0, 0.0 );
+	Kernel[13] = vec2( 1.0, 0.0 );
+	Kernel[14] = vec2( 2.0, 0.0 );
+	
+	Kernel[15] = vec2(-2.0, 1.0 );
+	Kernel[16] = vec2(-1.0, 1.0 );
+	Kernel[17] = vec2( 0.0, 1.0 );
+	Kernel[18] = vec2( 1.0, 1.0 );
+	Kernel[19] = vec2( 2.0, 1.0 );
+	
+	Kernel[20] = vec2(-2.0, 2.0 );
+	Kernel[21] = vec2(-1.0, 2.0 );
+	Kernel[22] = vec2( 0.0, 2.0 );
+	Kernel[23] = vec2( 1.0, 2.0 );
+	Kernel[24] = vec2( 2.0, 2.0 );
+}
 
 float unpack(vec4 color) {
-   const vec4 bitShifts = vec4(pow(256, -3), pow(256, -2), pow(256,- 1), 1.0);
-   return dot(color, bitShifts);
+	const vec4 bitShifts = vec4(pow(256, -3), pow(256, -2), pow(256,- 1), 1.0);
+	return dot(color, bitShifts);
+}
+
+float getDepth() {
+	return length(vLightVec) / 10000.0;
+}
+
+float getShadow(float area, float bias) {
+	float shadow = 0.0;
+	
+	for (int i = 0; i < KERNEL_SIZE; i++) {
+  		float shadowMap = unpack(texture2DProj(
+  			shadowMapTexture,
+  			shadowCoord + vec4(Kernel[i] * area, 0.1, 0.0)
+  		));
+  		
+  		shadow += float(getDepth() < (shadowMap - bias));
+	}
+	
+	return shadow / KERNEL_SIZE;
+}
+
+vec4 getLightColor() {
+	vec3 N = normalize(vNormal);
+	vec3 L = normalize(vLightVec);
+	vec3 E = normalize(vEyeVec);
+	
+	float diffuse = dot(N, -L);
+	
+	vec3 H = normalize(-L + E);
+	float specular = pow(clamp(dot(N, H), 0.0, 1.0), 120.0);
+	specular *= diffuse;
+	
+	vec4 returnColor = vec4(0);
+	returnColor += uDiffColor * (diffuse * uDiffIntensity);
+	returnColor += uSpecColor * (specular * uSpecIntensity);
+	
+	return returnColor;
 }
 
 void main(void) {
-   float depth = length(vLightVec) / 10000.0;
-   
-   vec3 Kernel[KERNEL_SIZE];
-   
-   Kernel[0]  = vec3(-2.0,-2.0, 0.1 );
-   Kernel[1]  = vec3(-1.0,-2.0, 0.1 );
-   Kernel[2]  = vec3( 0.0,-2.0, 0.1 );
-   Kernel[3]  = vec3( 1.0,-2.0, 0.1 );
-   Kernel[4]  = vec3( 2.0,-2.0, 0.1 );
-   
-   Kernel[5]  = vec3(-2.0,-1.0, 0.1 );
-   Kernel[6]  = vec3(-1.0,-1.0, 0.1 );
-   Kernel[7]  = vec3( 0.0,-1.0, 0.1 );
-   Kernel[8]  = vec3( 1.0,-1.0, 0.1 );
-   Kernel[9]  = vec3( 2.0,-1.0, 0.1 );
-   
-   Kernel[10] = vec3(-2.0, 0.0, 0.1 );
-   Kernel[11] = vec3(-1.0, 0.0, 0.1 );
-   Kernel[12] = vec3( 0.0, 0.0, 0.1 );
-   Kernel[13] = vec3( 1.0, 0.0, 0.1 );
-   Kernel[14] = vec3( 2.0, 0.0, 0.1 );
-   
-   Kernel[15] = vec3(-2.0, 1.0, 0.1 );
-   Kernel[16] = vec3(-1.0, 1.0, 0.1 );
-   Kernel[17] = vec3( 0.0, 1.0, 0.1 );
-   Kernel[18] = vec3( 1.0, 1.0, 0.1 );
-   Kernel[19] = vec3( 2.0, 1.0, 0.1 );
-   
-   Kernel[20] = vec3(-2.0, 2.0, 0.1 );
-   Kernel[21] = vec3(-1.0, 2.0, 0.1 );
-   Kernel[22] = vec3( 0.0, 2.0, 0.1 );
-   Kernel[23] = vec3( 1.0, 2.0, 0.1 );
-   Kernel[24] = vec3( 2.0, 2.0, 0.1 );
-   
-   float shadow = 0.0;
-   
-   for (int i = 0; i < KERNEL_SIZE; i++) {
-      float shadowMap = unpack(texture2DProj(shadowMapTexture, shadowCoord + vec4(Kernel[i] * uSampleArea, 0.0)));
-      shadow += float(depth < (shadowMap - uShadowBias));
-   }
-   
-   gl_FragColor = vec4(0.9, 0.5, 0.1, 1.0) * (shadow / float(KERNEL_SIZE));
+	createKernel();
+	
+	float shadow = getShadow(shadowArea, shadowBias);
+	
+	gl_FragColor = (platformColor + getLightColor()) * shadow;
 }]]></RmShaderCode></RmGLShader>
     <RmStreamMapReference NAME="Stream Mapping" API=""/>
-    <RmFloatVariable NAME="uShadowBias" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="0.020000" MIN="-1.000000" MAX="1.000000" CLAMP="TRUE"/>
-    <RmFloatVariable NAME="uSampleArea" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="1.000000" MIN="-1.000000" MAX="1.000000" CLAMP="FALSE"/>
+    <RmFloatVariable NAME="shadowArea" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="1.000000" MIN="-1.000000" MAX="1.000000" CLAMP="FALSE"/>
+    <RmFloatVariable NAME="shadowBias" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE="0.020000" MIN="-1.000000" MAX="1.000000" CLAMP="TRUE"/>
     <RmTextureObject NAME="shadowMapTexture" API="OpenGL" STATE_INDEX="0" VERTEX_TEXTURE="FALSE">
      <RmTextureReference NAME="renderTexture" API=""/>
      <RmState NAME="GL_TextureWrapS" API="OpenGL" STATE="1" VALUE="2" USAGE="SAMPLER_STATE"/>
@@ -1435,13 +1503,18 @@ void main(void) {
     </RmTextureObject>
     <RmSampler NAME="shadowMapTexture" API="" REGISTER="-1"/>
     <RmShaderConstant NAME="lightProjection" API="" REGISTER="-1"/>
+    <RmShaderConstant NAME="platformColor" API="" REGISTER="-1"/>
+    <RmShaderConstant NAME="shadowArea" API="" REGISTER="-1"/>
+    <RmShaderConstant NAME="shadowBias" API="" REGISTER="-1"/>
     <RmShaderConstant NAME="fLight1Pos" API="" REGISTER="-1"/>
-    <RmShaderConstant NAME="uSampleArea" API="" REGISTER="-1"/>
-    <RmShaderConstant NAME="uShadowBias" API="" REGISTER="-1"/>
+    <RmShaderConstant NAME="uDiffColor" API="" REGISTER="-1"/>
+    <RmShaderConstant NAME="uDiffIntensity" API="" REGISTER="-1"/>
+    <RmShaderConstant NAME="uSpecColor" API="" REGISTER="-1"/>
+    <RmShaderConstant NAME="uSpecIntensity" API="" REGISTER="-1"/>
    </RmGLPass>
   </RmOpenGLEffect>
   <RmMatrixVariable NAME="matView" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="View" VALUE_0="0.204823" VALUE_1="-0.976012" VALUE_2="-0.073815" VALUE_3="0.000000" VALUE_4="0.916291" VALUE_5="0.164679" VALUE_6="0.365091" VALUE_7="-0.000010" VALUE_8="-0.344176" VALUE_9="-0.142415" VALUE_10="0.928042" VALUE_11="-7.321841" VALUE_12="0.000000" VALUE_13="0.000000" VALUE_14="0.000000" VALUE_15="1.000000"/>
-  <RmMatrixVariable NAME="matProjection" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="Projection" VALUE_0="2.594748" VALUE_1="0.000000" VALUE_2="0.000000" VALUE_3="0.000000" VALUE_4="0.000000" VALUE_5="2.414213" VALUE_6="0.000000" VALUE_7="0.000000" VALUE_8="0.000000" VALUE_9="0.000000" VALUE_10="-1.001001" VALUE_11="-1.001001" VALUE_12="0.000000" VALUE_13="0.000000" VALUE_14="-1.000000" VALUE_15="0.000000"/>
+  <RmMatrixVariable NAME="matProjection" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="Projection" VALUE_0="2.297068" VALUE_1="0.000000" VALUE_2="0.000000" VALUE_3="0.000000" VALUE_4="0.000000" VALUE_5="2.414213" VALUE_6="0.000000" VALUE_7="0.000000" VALUE_8="0.000000" VALUE_9="0.000000" VALUE_10="-1.001001" VALUE_11="-1.001001" VALUE_12="0.000000" VALUE_13="0.000000" VALUE_14="-1.000000" VALUE_15="0.000000"/>
   <RmMatrixVariable NAME="matViewProjection" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="ViewProjection" VALUE_0="1.534809" VALUE_1="0.569676" VALUE_2="-0.284097" VALUE_3="0.000003" VALUE_4="-0.922471" VALUE_5="1.911778" VALUE_6="-1.150034" VALUE_7="0.000065" VALUE_8="0.027952" VALUE_9="-0.505850" VALUE_10="-0.863329" VALUE_11="199.199173" VALUE_12="0.027924" VALUE_13="-0.505344" VALUE_14="-0.862466" VALUE_15="199.999969"/>
   <RmMatrixVariable NAME="lightProjection" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" VALUE_0="2.000000" VALUE_1="0.000000" VALUE_2="0.000000" VALUE_3="0.000000" VALUE_4="0.000000" VALUE_5="2.000000" VALUE_6="0.000000" VALUE_7="0.000000" VALUE_8="0.000000" VALUE_9="0.000000" VALUE_10="-1.000000" VALUE_11="-1.000000" VALUE_12="0.000000" VALUE_13="0.000000" VALUE_14="-1.000000" VALUE_15="1.000000"/>
   <RmRenderableTexture NAME="renderTexture" API="" ARTIST_EDITABLE="FALSE" VARIABLE_SEMANTIC="" FILE_NAME="" ORIGIN="0" WIDTH="128" HEIGHT="128" FORMAT="21" USE_VIEWPORT_DIMENSIONS="FALSE" GENERATE_MIPMAPS="TRUE" WIDTH_RATIO="1.000000" HEIGHT_RATIO="1.000000"/>
